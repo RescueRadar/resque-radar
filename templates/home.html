@@ -1,8 +1,104 @@
 {% extends 'base.html' %} {% block main %}
 
-<div>
+<div class="h-[60dvh] overflow-hidden bg-white/10 relative">
 	{% load static %}
-	<img src="{% static 'img/rescue_bg_1.jpg' %}" alt="My image" />
+	<img src="{% static 'img/rescue_bg_1.jpg' %}" alt="My image" class="opacity-20 absolute top-0" />
+	<div class="flex flex-col ml-8 justify-center h-full">
+		<h1 class="text-4xl font-bold">Resque Radar</h1>
+		<p class="text-xl">Uniting Heroes, Saving Lives – One Umbrella, Infinite Hope.</p>
+	</div>
 </div>
 
-{% endblock main %}
+<div
+	class="flex flex-col items-center justify-center bg-base-200 py-8 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 mt-8 mb-8">
+	<h2 class="text-3xl font-bold text-center mt-8 mb-4">Our Mission</h2>
+	<p class="text-xl text-center px-8 md:px-32 lg:px-64 xl:px-96 2xl:px-128 mb-8 leading-relaxed">
+		Our goal at Resque Radar is to bring together the unsung heroes of different rescue organizations under one
+		strong roof, becoming a formidable force committed to offering quick, dependable, and life-saving reactions
+		during emergencies. When a disaster happens, we think that relief and assistance should be given right away.
+		Every moment counts because lives are on the line. We have therefore set out to coordinate the operations of the
+		rescue organizations, bringing them all together to create a strong network of first responders. Our
+		organization acts as the lighthouse that directs various organizations, making sure they are organized and
+		prepared to effectively manage any emergency crisis.
+	</p>
+</div>
+
+{% comment %} Agencies We work with {% endcomment %}
+<div
+	class="flex flex-col items-center justify-center bg-white/10 py-8 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 mt-8 mb-8">
+	<h2 class="text-3xl font-bold text-center mt-8 mb-4">Agencies We Work With</h2>
+	<p class="text-xl text-center px-8 md:px-32 lg:px-64 xl:px-96 2xl:px-128 mb-8 leading-relaxed">
+		We work with a number of agencies to ensure that we are able to provide the best possible service to our
+		customers. We are always looking to expand our network of agencies and are open to working with new agencies.
+	</p>
+	<div class="flex flex-col md:flex-row justify-center items-center">
+		<div class="flex flex-col items-center justify-center">
+			<img src="{% static 'img/agency_1.png' %}" alt="Agency 1" class="w-32 h-32" />
+			<p class="text-xl mt-4">Agency 1</p>
+		</div>
+		<div class="flex flex-col items-center justify-center">
+			<img src="{% static 'img/agency_2.png' %}" alt="Agency 2" class="w-32 h-32" />
+			<p class="text-xl mt-4">Agency 2</p>
+		</div>
+		<div class="flex flex-col items-center justify-center">
+			<img src="{% static 'img/agency_3.png' %}" alt="Agency 3" class="w-32 h-32" />
+			<p class="text-xl mt-4">Agency 3</p>
+		</div>
+		<div class="flex flex-col items-center justify-center">
+			<img src="{% static 'img/agency_4.png' %}" alt="Agency 4" class="w-32 h-32" />
+			<p class="text-xl mt-4">Agency 4</p>
+		</div>
+	</div>
+</div>
+
+{% comment %} Contact Us {% endcomment %}
+<div
+	class="flex flex-col items-center justify-center bg-base-200 py-8 px-4 md:px-8 lg:px-16 xl:px-32 2xl:px-64 mt-8 mb-8">
+	<h2 class="text-3xl font-bold text-center mt-8 mb-4">Contact Us</h2>
+	<p class="text-xl text-center px-8 md:px-32 lg:px-64 xl:px-96 2xl:px-128 mb-8 leading-relaxed">
+		We are always looking to expand our network of agencies and are open to working with new agencies. If you are
+		interested in working with us, please contact us using the form below.
+	</p>
+	<form class="w-full max-w-lg">
+		<div class="flex flex-wrap -mx-3 mb-6">
+			<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+				<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+					First Name
+				</label>
+				<input
+					class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+					id="grid-first-name"
+					type="text"
+					placeholder="Jane" />
+				<p class="text-red-500 text-xs italic">Please fill out this field.</p>
+			</div>
+			<div class="w-full md:w-1/2 px-3">
+				<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+					Last Name
+				</label>
+				<input
+					class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+					id="grid-last-name"
+					type="text"
+					placeholder="Doe" />
+			</div>
+		</div>
+		<div class="flex flex-wrap -mx-3 mb-6">
+			<div class="w-full px-3">
+				<label class="block uppercase tracking -wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+					E-mail
+				</label>
+				<input
+					class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+					id="grid-password"
+					type="email"
+					placeholder="Please enter your email address" />
+				<p class="text-gray-600 text-xs italic">
+					Please enter a valid email address so we can get back to you.
+				</p>
+			</div>
+		</div>
+
+		{% endblock main %}
+	</form>
+</div>
