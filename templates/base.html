@@ -1,19 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.7/dist/full.css" rel="stylesheet" type="text/css" />
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>{% block title %}Resque Radar{% endblock %}</title>
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="" />
+		<link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.7/dist/full.css" rel="stylesheet" type="text/css" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+	</head>
+	<body>
+		<div class="navbar py-4 bg-base-200">
+			<div class="navbar-start">
+				<a class="btn btn-ghost normal-case text-xl" href="/">Resque Radar</a>
+			</div>
+			<div class="navbar-end">
+				<div class="mr-2 hidden md:block">
+					<ul tabindex="0" class="flex text-md">
+						<li><a class="btn btn-ghost btn-sm">About Us</a></li>
+						<p class="px-2">|</p>
+						<li><a class="btn btn-ghost btn-sm">Partners</a></li>
+						<p class="px-2">|</p>
+						<li><a class="btn btn-ghost btn-sm">Contact</a></li>
+					</ul>
+				</div>
+				<div class="dropdown md:hidden">
+					<label tabindex="0" class="btn btn-ghost btn-circle">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							class="h-5 w-5"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke="currentColor">
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								stroke-width="2"
+								d="M4 6h16M4 12h16M4 18h7" />
+						</svg>
+					</label>
+					<ul
+						tabindex="0"
+						class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+						<li><a>About Us</a></li>
+						<li><a>Partners</a></li>
+						<li><a>Contact</a></li>
+					</ul>
+				</div>
+				<button
+					data-toggle-theme="dark,light"
+					data-act-class="ACTIVECLASS"
+					class="flex items-center justify-center">
+					<input type="checkbox" class="toggle" />
+				</button>
+			</div>
+		</div>
 
-        {% block main %}{% endblock %}
+		{% block main %}{% endblock %}
 
-        <script src="" async defer></script>
-    </body>
+		<script src="" async defer></script>
+	</body>
 </html>
