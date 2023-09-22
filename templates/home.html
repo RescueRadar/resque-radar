@@ -2,10 +2,14 @@
 
 <div class="h-[60dvh] overflow-hidden bg-white/10 relative">
 	{% load static %}
-	<img src="{% static 'img/rescue_bg_1.jpg' %}" alt="My image" class="opacity-20 absolute top-0" />
+	<img
+		src="{% static 'img/rescue_bg_1.jpg' %}"
+		alt="My image"
+		class="opacity-20 absolute top-0 pointer-events-none" />
 	<div class="flex flex-col ml-8 justify-center h-full">
 		<h1 class="text-4xl font-bold">Resque Radar</h1>
 		<p class="text-xl">Uniting Heroes, Saving Lives – One Umbrella, Infinite Hope.</p>
+		<button class="btn btn-accent mt-4 max-w-md">In Need of Help?</button>
 	</div>
 </div>
 
@@ -31,22 +35,22 @@
 		We work with a number of agencies to ensure that we are able to provide the best possible service to our
 		customers. We are always looking to expand our network of agencies and are open to working with new agencies.
 	</p>
-	<div class="flex flex-col md:flex-row justify-center items-center">
+	<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
 		<div class="flex flex-col items-center justify-center">
-			<img src="{% static 'img/agency_1.png' %}" alt="Agency 1" class="w-32 h-32" />
-			<p class="text-xl mt-4">Agency 1</p>
+			<img src="{% static 'img/agency_1.png' %}" alt="Agency 1" class="w-32 h-32 object-cover" />
+			<p class="text-xl mt-4">NDMA</p>
 		</div>
 		<div class="flex flex-col items-center justify-center">
-			<img src="{% static 'img/agency_2.png' %}" alt="Agency 2" class="w-32 h-32" />
-			<p class="text-xl mt-4">Agency 2</p>
+			<img src="{% static 'img/agency_2.png' %}" alt="Agency 2" class="w-32 h-32 object-cover" />
+			<p class="text-xl mt-4">NDRF</p>
 		</div>
 		<div class="flex flex-col items-center justify-center">
 			<img src="{% static 'img/agency_3.png' %}" alt="Agency 3" class="w-32 h-32" />
-			<p class="text-xl mt-4">Agency 3</p>
+			<p class="text-xl mt-4">NIDM</p>
 		</div>
 		<div class="flex flex-col items-center justify-center">
 			<img src="{% static 'img/agency_4.png' %}" alt="Agency 4" class="w-32 h-32" />
-			<p class="text-xl mt-4">Agency 4</p>
+			<p class="text-xl mt-4">CDRI</p>
 		</div>
 	</div>
 </div>
@@ -65,22 +69,13 @@
 				<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
 					First Name
 				</label>
-				<input
-					class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-					id="grid-first-name"
-					type="text"
-					placeholder="Jane" />
-				<p class="text-red-500 text-xs italic">Please fill out this field.</p>
+				<input class="input input-bordered" id="grid-first-name" type="text" placeholder="First Name" />
 			</div>
 			<div class="w-full md:w-1/2 px-3">
 				<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
 					Last Name
 				</label>
-				<input
-					class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-					id="grid-last-name"
-					type="text"
-					placeholder="Doe" />
+				<input class="input input-bordered" id="grid-last-name" type="text" placeholder="Last Name" />
 			</div>
 		</div>
 		<div class="flex flex-wrap -mx-3 mb-6">
@@ -89,7 +84,7 @@
 					E-mail
 				</label>
 				<input
-					class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+					class="input input-bordered w-full"
 					id="grid-password"
 					type="email"
 					placeholder="Please enter your email address" />
