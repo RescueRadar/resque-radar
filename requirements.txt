@@ -1,4 +1,6 @@
 django
-djangorestframework
 fontawesomefree==6.4.2
 python-dotenv
+django-allauth
+django-allauth-ui
+django-widget-tweaks
