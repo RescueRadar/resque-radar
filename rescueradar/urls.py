@@ -15,6 +15,7 @@ urlpatterns = [
     path('dashboard/', base_views.dashboard, name='dashboard'),
     path('request_submitted/<str:form_submitted>/', base_views.request_submitted, name='request_submitted'),
     path('user_profile/', base_views.user_profile, name='user_profile'),
+    path('user_report/', base_views.user_report, name='user_report'),
     # path('', include(router.urls)),
     # path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

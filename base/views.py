@@ -16,6 +16,9 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
 
+def user_report(request):
+    return render(request, 'user_report.html')
+
 
 @login_required
 @agency_req
