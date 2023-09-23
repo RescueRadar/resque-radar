@@ -13,8 +13,7 @@ urlpatterns = [
     path('contact/', base_views.contact, name='contact'),
     path('accounts/profile/', base_views.profile, name='profile'),
     path('dashboard/', base_views.dashboard, name='dashboard'),
-    path('request_submitted/<int:form_submitted>/', request_submitted, name='request_submitted'),
-
+    path('request_submitted/<str:form_submitted>/', base_views.request_submitted, name='request_submitted'),
     path('user_profile/', base_views.user_profile, name='user_profile'),
     # path('', include(router.urls)),
     # path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))

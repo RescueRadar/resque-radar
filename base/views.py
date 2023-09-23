@@ -55,7 +55,7 @@ def profile(request):
         )
         messages.success(request, "Profile information saved successfully.")
         form_submitted=True
-        return redirect('request_submitted', form_submitted=form_submitted)
+        return redirect('request_submitted', form_submitted=str(form_submitted))  # Convert to string
     else:
         if non_approved_agency.objects.filter(user=request.user).exists():
             return redirect('request_submitted', form_submitted=form_submitted)
