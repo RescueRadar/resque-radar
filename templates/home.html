@@ -1,7 +1,5 @@
-{% extends 'base.html' %} {% block main %}
-
+{% extends 'base.html' %} {% block main %} {% load static %}
 <div class="h-[60dvh] overflow-hidden bg-base-300 relative">
-	{% load static %}
 	<img
 		src="{% static 'img/rescue_bg_1.jpg' %}"
 		alt="My image"
@@ -15,14 +13,15 @@
 
 <div class="flex flex-col items-center justify-center bg-base-200 my-8 py-12">
 	<h2 class="text-3xl font-bold text-center my-4">Our Mission</h2>
-	<p class="text-[min(1.25rem,3.5vw)] text-center max-w-4xl px-4 mb-8 leading-relaxed">
-		Our goal at Resque Radar is to bring together the unsung heroes of different rescue organizations under one
-		strong roof, becoming a formidable force committed to offering quick, dependable, and life-saving reactions
-		during emergencies. When a disaster happens, we think that relief and assistance should be given right away.
-		Every moment counts because lives are on the line. We have therefore set out to coordinate the operations of the
-		rescue organizations, bringing them all together to create a strong network of first responders. Our
-		organization acts as the lighthouse that directs various organizations, making sure they are organized and
-		prepared to effectively manage any emergency crisis.
+	<p class="text-[min(1.25rem,3.5vw)] text-center max-w-4xl mt-4 px-4 mb-8 leading-relaxed">
+		Our goal at <span class="font-bold">Resque Radar</span> is to bring together the unsung heroes of different
+		rescue organizations under one strong roof, becoming a formidable force committed to offering quick, dependable,
+		and life-saving reactions during emergencies. When a disaster happens, we think that relief and assistance
+		should be given right away. <span class="underline">Every moment counts</span> because lives are on the line. We
+		have therefore set out to coordinate the operations of the rescue organizations, bringing them all together to
+		create a strong network of first responders. Our organization acts as the
+		<span class="text-accent">lighthouse</span> that directs various organizations, making sure they are organized
+		and prepared to effectively manage any emergency crisis.
 	</p>
 </div>
 
@@ -34,63 +33,48 @@
 	</p>
 	<div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-8">
 		<div class="flex flex-col items-center justify-center">
-			<img src="{% static 'img/agency_1.png' %}" alt="Agency 1" class="w-32 h-32 object-cover" />
+			<img
+				src="{% static 'img/agency_1.png' %}"
+				alt="Agency 1"
+				class="w-32 h-32 object-cover"
+				data-aos="flip-up" />
 			<p class="text-xl mt-4">NDMA</p>
 		</div>
 		<div class="flex flex-col items-center justify-center">
-			<img src="{% static 'img/agency_2.png' %}" alt="Agency 2" class="w-32 h-32 object-cover" />
+			<img
+				src="{% static 'img/agency_2.png' %}"
+				alt="Agency 2"
+				class="w-32 h-32 object-cover"
+				data-aos="flip-up" />
 			<p class="text-xl mt-4">NDRF</p>
 		</div>
 		<div class="flex flex-col items-center justify-center">
-			<img src="{% static 'img/agency_3.png' %}" alt="Agency 3" class="w-32 h-32" />
+			<img src="{% static 'img/agency_3.png' %}" alt="Agency 3" class="w-32 h-32" data-aos="flip-up" />
 			<p class="text-xl mt-4">NIDM</p>
 		</div>
 		<div class="flex flex-col items-center justify-center">
-			<img src="{% static 'img/agency_4.png' %}" alt="Agency 4" class="w-32 h-32" />
+			<img src="{% static 'img/agency_4.png' %}" alt="Agency 4" class="w-32 h-32" data-aos="flip-up" />
 			<p class="text-xl mt-4">CDRI</p>
 		</div>
 	</div>
 </div>
 
 <div class="flex flex-col items-center mb-8 justify-center bg-base-200 my-8 py-12">
-	<h2 class="text-3xl font-bold text-center my-4">Contact Us</h2>
+	<h2 class="text-3xl font-bold text-center my-4">Join Us</h2>
+	{% comment %} write a quote on unity {% endcomment %}
+	<p
+		class="text-xl text-center px-8 italic leading-relaxed max-w-5xl"
+		data-aos="fade-up"
+		data-aos-anchor-placement="top-bottom"
+		data-aos-duration="1000"
+		data-aos-easing="ease-in-out">
+		"Alone, we can do so little; together, we can do so much." — Helen Keller
+	</p>
 	<p class="text-xl text-center px-8 my-4 mb-8 leading-relaxed max-w-5xl">
 		We are always looking to expand our network of agencies and are open to working with new agencies. If you are
-		interested in working with us, please contact us using the form below.
+		interested in working with us, please register your agency by clicking the button below.
 	</p>
-	<form class="w-full max-w-lg px-4">
-		<div class="flex flex-wrap -mx-3 mb-6">
-			<div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-				<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-					First Name
-				</label>
-				<input class="input input-bordered" id="grid-first-name" type="text" placeholder="First Name" />
-			</div>
-			<div class="w-full md:w-1/2 px-3">
-				<label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-					Last Name
-				</label>
-				<input class="input input-bordered" id="grid-last-name" type="text" placeholder="Last Name" />
-			</div>
-		</div>
-		<div class="flex flex-wrap -mx-3 mb-6">
-			<div class="w-full px-3">
-				<label class="block uppercase tracking -wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-					E-mail
-				</label>
-				<input
-					class="input input-bordered w-full"
-					id="grid-password"
-					type="email"
-					placeholder="Please enter your email address" />
-				<p class="text-gray-600 text-xs italic mt-1">
-					Please enter a valid email address so we can get back to you.
-				</p>
-			</div>
-		</div>
-
-		<button class="btn btn-accent w-full mt-2 mb-4">Submit</button>
-	</form>
+	<button class="btn btn-accent mt-4 w-full max-w-md">Register Your Agency</button>
 </div>
 
 {% comment %} Footer {% endcomment %}
@@ -110,15 +94,19 @@
 		</ul>
 		<ul class="flex flex-col justify-start items-start text-gray-500 text-sm space-y-2 whitespace-nowrap">
 			<li>
+				<i class="fa-brands fa-facebook"></i>
 				<a href="#" class="hover:underline">Facebook</a>
 			</li>
 			<li>
+				<i class="fa-brands fa-x-twitter"></i>
 				<a href="#" class="hover:underline">Twitter</a>
 			</li>
 			<li>
+				<i class="fa-brands fa-instagram"></i>
 				<a href="#" class="hover:underline">Instagram</a>
 			</li>
 			<li>
+				<i class="fa-brands fa-linkedin"></i>
 				<a href="#" class="hover:underline">LinkedIn</a>
 			</li>
 		</ul>

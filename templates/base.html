@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html class"scroll-smooth">
 	<head>
 		<meta charset="utf-8" />
@@ -8,10 +9,19 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="" />
 		<link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.7/dist/full.css" rel="stylesheet" type="text/css" />
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+
+		<link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css" />
+		<link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css" />
+		<link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css" />
 	</head>
 	<body>
+		<script>
+  AOS.init();
+</script>
 		<div class="navbar py-4 bg-base-200">
 			<div class="navbar-start">
 				<a class="btn btn-ghost normal-case text-xl" href="/">Resque Radar</a>

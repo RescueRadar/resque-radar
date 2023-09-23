@@ -1,2 +1,3 @@
 django
 djangorestframework
+fontawesomefree==6.4.2
