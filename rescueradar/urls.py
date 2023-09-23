@@ -9,7 +9,7 @@ urlpatterns = [
     path('', base_views.home, name='home'),
     path('about/', base_views.about, name='about'),
     path('contact/', base_views.contact, name='contact'),
-    path('profile/', base_views.profile, name='profile'),
+    path('accounts/profile/', base_views.profile, name='profile'),
     path('dashboard/', base_views.dashboard, name='dashboard'),
     # path('', include(router.urls)),
     # path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
