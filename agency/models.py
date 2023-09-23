@@ -5,6 +5,7 @@ from django.dispatch import receiver
 
 
 class agency(models.Model):
+    user = models.OneToOneField('auth.User', on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     address = models.CharField(max_length=50)
     phone = models.CharField(max_length=50)
@@ -32,6 +33,7 @@ class agency(models.Model):
 
 
 class non_approved_agency(models.Model):
+    user = models.OneToOneField('auth.User', on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
     address = models.CharField(max_length=50)
     phone = models.CharField(max_length=50)

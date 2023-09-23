@@ -1,7 +1,8 @@
 {% extends 'base.html' %} {% block main %}
 
 <div class="flex items-center justify-center my-12">
-	<form class="flex flex-col w-full max-w-2xl border-base-300 p-10 border rounded-xl shadow-lg">
+	<form class="flex flex-col w-full max-w-2xl border-base-300 p-10 border rounded-xl shadow-lg" method="post">
+        {% csrf_token %}
 		<h1 class="text-2xl mb-6 text-center font-bold">Register your Agency</h1>
 		<p class="mb-12 text-sm text-center">
 			Fill in the form below to register your Agency. Remember to fill in the details correctly as you won't be

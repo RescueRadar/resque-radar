@@ -30,7 +30,10 @@ SECRET_KEY = 'django-insecure-4=+_96i2jaye4i1-1o)xa+-mid$7j^&jd93b#c!=u2!p+_yqsr
 DEBUG = True
 
 ALLOWED_HOSTS = ['rescueradar.azurewebsites.net', '127.0.0.1','localhost']
-
+CSRF_TRUSTED_ORIGINS = [
+    'http://rescueradar.azurewebsites.net',
+    'https://rescueready.azurewebsites.net',
+]
 
 # Application definition
 
