@@ -61,7 +61,7 @@ class non_approved_agency(models.Model):
         verbose_name_plural = "non_approved_agencies"
     
     def approve(self):
-        agency.objects.create(name=self.name, address=self.address, phone=self.phone, email=self.email, website=self.website, about=self.about, created_at=self.created_at, updated_at=self.updated_at, location_lat=self.location_lat, location_long=self.location_long, locality=self.locality, city=self.city, state=self.state, manpower=self.manpower, volunteers=self.volunteers, category_of_calamity=self.category_of_calamity, category_of_service=self.category_of_service)
+        agency.objects.create(user=self.user,name=self.name, address=self.address, phone=self.phone, email=self.email, website=self.website, about=self.about, created_at=self.created_at, updated_at=self.updated_at, location_lat=self.location_lat, location_long=self.location_long, locality=self.locality, city=self.city, state=self.state, manpower=self.manpower, volunteers=self.volunteers, category_of_calamity=self.category_of_calamity, category_of_service=self.category_of_service)
         self.delete()
         return True
 

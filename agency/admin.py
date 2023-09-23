@@ -3,7 +3,14 @@ from django.contrib import admin
 # Register your models here.
 from .models import agency, non_approved_agency
 
+class non_approved_agencyAdmin(admin.ModelAdmin):
+    actions = ['approve_agency']
 
-admin.site.register(non_approved_agency)
+    def approve_agency(self, request, queryset):
+        for i in queryset:
+            i.approve()
+
+
+admin.site.register(non_approved_agency, non_approved_agencyAdmin)
 
 admin.site.register(agency)
