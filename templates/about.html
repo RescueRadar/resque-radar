@@ -1,0 +1,88 @@
+{% extends 'base.html' %} {% block main %} {% load static %}
+
+<div class="flex mb-24 mt-12 flex-col md:flex-row">
+	<div class="flex-1 flex items-center justify-center">
+		<div class="card w-96 h-96 bg-base-200 shadow-xl mt-4">
+			<figure>
+				<img src="{% static 'img/rescue_bg_2.jpg' %}" alt="Rescue Image 1" class="rounded-t-lg" />
+			</figure>
+			<div class="card-body">
+				<p>Unity to be real must stand the severest strain without breaking. – Mahatma Gandhi</p>
+			</div>
+		</div>
+	</div>
+	<div class="flex-1 mx-8">
+		<h2>
+			<p class="text-3xl text-center mt-12 md:mt-0 md:text-end mr-8 font-bold leading-relaxed mb-12">
+				Our Main Pillars
+			</p>
+		</h2>
+		<h2>
+			<p class="text-2xl font-bold my-4">The Power of Unity</p>
+		</h2>
+		<p class="text-sm mb-12">
+			We firmly believe that unity is the cornerstone of effective disaster response. By bringing together diverse
+			agencies and their invaluable expertise, we harness the power of collaboration to make a profound difference
+			when it matters most.
+		</p>
+		<h2>
+			<p class="text-2xl font-bold my-4">Streamlining Emergency Response</p>
+		</h2>
+		<p class="text-sm">
+			Our organization serves as the catalyst for this unified approach, facilitating seamless coordination,
+			resource-sharing, and communication among rescue agencies. We believe that streamlining these efforts is the
+			key to minimizing response times and saving lives.
+		</p>
+	</div>
+</div>
+
+<div class="my-32">
+	<h2 class="text-center w-1/4 ml-16 text-2xl font-bold my-8">Future Plans</h2>
+	<ul class="steps w-full">
+		<li class="step step-primary">Ideation during Hackathon</li>
+		<li class="step">Presented to the Judges</li>
+		<li class="step">Got selected for the national round</li>
+		<li class="step">Won the national round</li>
+	</ul>
+</div>
+
+<h2 class="text-center text-2xl font-bold my-8">Frequently Asked Questions</h2>
+<div class="flex items-center justify-center mb-24 mx-8">
+	<div class="flex-1 max-w-5xl space-y-4">
+		<div class="collapse collapse-arrow bg-base-200" data-aos="fade-up">
+			<input type="radio" name="my-accordion-2" checked="checked" />
+			<div class="collapse-title text-xl font-medium">What is Resque Radar?</div>
+			<div class="collapse-content">
+				<p>
+					Resque Radar is a platform that brings together various rescue agencies under one umbrella to
+					provide rapid and reliable response during calamities and emergencies.
+				</p>
+			</div>
+		</div>
+		<div class="collapse collapse-arrow bg-base-200" data-aos="fade-up">
+			<input type="radio" name="my-accordion-2" />
+			<div class="collapse-title text-xl font-medium">How does Resque Radar work?</div>
+			<div class="collapse-content">
+				<p>
+					Resque Radar facilitates seamless coordination and communication among rescue agencies. It provides
+					a central platform where agencies can share resources, expertise, and information, ensuring a more
+					efficient response to disasters.
+				</p>
+			</div>
+		</div>
+		<div class="collapse collapse-arrow bg-base-200" data-aos="fade-up">
+			<input type="radio" name="my-accordion-2" />
+			<div class="collapse-title text-xl font-medium">
+				What sets Resque Radar apart from other emergency response systems?
+			</div>
+			<div class="collapse-content">
+				<p>
+					Resque Radar's unique strength lies in its ability to unite multiple rescue agencies, fostering
+					collaboration and resource-sharing. This collaborative approach enhances the speed and efficiency of
+					emergency responses, ultimately saving more lives.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

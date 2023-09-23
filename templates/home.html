@@ -2,16 +2,16 @@
 <div class="h-[60dvh] overflow-hidden bg-base-300 relative">
 	<img
 		src="{% static 'img/rescue_bg_1.jpg' %}"
-		alt="My image"
-		class="opacity-20 absolute top-0 pointer-events-none" />
+		alt="Rescue Background"
+		class="opacity-20 absolute top-0 h-[60dvh] w-full sm:h-auto pointer-events-none" />
 	<div class="flex flex-col sm:ml-8 mx-2 items-center sm:items-start text-center sm:text-start justify-center h-full">
-		<h1 class="text-4xl font-bold">Resque Radar</h1>
-		<p class="text-xl">Uniting Heroes, Saving Lives – One Umbrella, Infinite Hope.</p>
-		<button class="btn btn-accent mt-4 w-full max-w-md">In Need of Help?</button>
+		<h1 class="text-4xl font-bold z-20">Resque Radar</h1>
+		<p class="text-xl z-20">Uniting Heroes, Saving Lives – One Umbrella, Infinite Hope.</p>
+		<button class="btn btn-accent mt-4 w-full max-w-md z-20 opacity-80">In Need of Help?</button>
 	</div>
 </div>
 
-<div class="flex flex-col items-center justify-center bg-base-200 my-8 py-12">
+<div class="flex flex-col items-center justify-center my-8 py-12">
 	<h2 class="text-3xl font-bold text-center my-4">Our Mission</h2>
 	<p class="text-[min(1.25rem,3.5vw)] text-center max-w-4xl mt-4 px-4 mb-8 leading-relaxed">
 		Our goal at <span class="font-bold">Resque Radar</span> is to bring together the unsung heroes of different
@@ -25,7 +25,7 @@
 	</p>
 </div>
 
-<div class="flex flex-col items-center justify-center bg-white/10 my-8 py-12">
+<div class="flex flex-col items-center justify-center bg-base-200 my-12 py-16">
 	<h2 class="text-3xl font-bold text-center my-4">Agencies We Work With</h2>
 	<p class="text-xl text-center my-4 leading-relaxed mx-8 max-w-5xl">
 		We work with a number of agencies to ensure that we are able to provide the best possible service to our
@@ -59,9 +59,8 @@
 	</div>
 </div>
 
-<div class="flex flex-col items-center mb-8 justify-center bg-base-200 my-8 py-12">
-	<h2 class="text-3xl font-bold text-center my-4">Join Us</h2>
-	{% comment %} write a quote on unity {% endcomment %}
+<div class="flex w-full flex-col items-center justify-center my-12 py-12">
+	<h2 class="text-3xl font-bold text-center mb-4">Join Us</h2>
 	<p
 		class="text-xl text-center px-8 italic leading-relaxed max-w-5xl"
 		data-aos="fade-up"
@@ -74,7 +73,7 @@
 		We are always looking to expand our network of agencies and are open to working with new agencies. If you are
 		interested in working with us, please register your agency by clicking the button below.
 	</p>
-	<button class="btn btn-accent mt-4 w-full max-w-md">Register Your Agency</button>
+	<button class="btn btn-accent mt-4 mx-8 w-full max-w-md">Register Your Agency</button>
 </div>
 
 {% comment %} Footer {% endcomment %}
@@ -83,7 +82,7 @@
 		<h3 class="text-2xl font-bold whitespace-nowrap row-span-3 my-auto md:my-0 md:row-span-1">Resque Radar</h3>
 		<ul class="flex flex-col justify-start items-start text-gray-500 text-sm space-y-2 whitespace-nowrap">
 			<li>
-				<a href="#" class="hover:underline">About Us</a>
+				<a class="hover:underline" href="{% url 'about' %}">About Us</a>
 			</li>
 			<li>
 				<a href="#" class="hover:underline">The Team</a>

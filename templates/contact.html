@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block main %} {% load static %}
+
+<div class="min-h-[80dvh] flex items-center justify-center">
+	<div class="flex flex-col items-center md:flex-row">
+		<div class="md:w-1/2 mx-12 mt-12">
+			<h1 class="text-3xl font-bold text-start mb-5">Want to Contact Us?</h1>
+			<p class="text-start mb-5">
+				We are always ready to help you. If you have any queries or suggestions, feel free to type them below.
+			</p>
+			<form class="flex flex-col items-center justify-between w-full">
+				<div class="flex items-center justify-between mb-4 w-full">
+					<input
+						type="text"
+						name="first_name"
+						placeholder="First Name"
+						class="input input-bordered w-full mr-4" />
+					<input type="text" name="last_name" placeholder="Last Name" class="input input-bordered w-full" />
+				</div>
+				<input type="email" name="email" placeholder="Email" class="input input-bordered w-full mb-4" />
+				<textarea
+					name="message"
+					rows="5"
+					placeholder="Your Message (Feel free to thoroughly explain your query or suggestion here.)"
+					class="textarea text-base p-4 w-full textarea-bordered"></textarea>
+				<button class="btn btn-primary w-full mt-4">Submit</button>
+			</form>
+		</div>
+		<img src="{% static 'img/pomodoro.png' %}" alt="Pomodoro Image" class="md:w-1/2 px-12 max-w-lg md:px-0" />
+	</div>
+</div>
+
+{% endblock %}
