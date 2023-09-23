@@ -17,11 +17,21 @@
 		<link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css" />
 		<link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css" />
 		<link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css" />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+
+		<style>
+			body {
+				font-family: 'Montserrat', sans-serif;
+			}
+		</style>
 	</head>
 	<body>
 		<script>
-  AOS.init();
-</script>
+  			AOS.init();
+		</script>
 		<div class="navbar py-4 bg-base-200">
 			<div class="navbar-start">
 				<a class="btn btn-ghost normal-case text-xl" href="/">Resque Radar</a>
@@ -54,8 +64,9 @@
 					</label>
 					<ul
 						tabindex="0"
-						class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-						<li><a>Why Us?</a></li>
+						class="menu menu-sm dropdown-content mt-3 -ml-8 z-20 px-4 py-2 shadow bg-base-100 rounded-box">
+						<li><a class="whitespace-nowrap"
+							href="{% url 'about' %}">About Us</a></li>
 						<li><a>Team</a></li>
 						<li><a>Contact</a></li>
 					</ul>
