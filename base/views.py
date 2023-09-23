@@ -16,6 +16,8 @@ def contact(request):
 def dashboard(request):
     return render(request, 'dashboard.html')
 
+def user_profile(request):
+    return render(request, 'user_profile.html')
 
 def profile(request):
     form_submitted = False

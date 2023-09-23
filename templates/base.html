@@ -48,6 +48,10 @@
 						<li><a href="{% url 'contact' %}" class="btn btn-ghost btn-sm">
 							Contact
 						</a></li>
+						<p class="px-2">|</p>
+						<li><a href="{% url 'user_profile' %}" class="btn btn-ghost btn-sm">
+							Profile
+						</a></li>
 					</ul>
 				</div>
 				<div class="dropdown md:hidden">
@@ -67,13 +71,18 @@
 					</label>
 					<ul
 						tabindex="0"
-						class="menu menu-sm dropdown-content mt-3 -ml-8 z-20 px-4 py-2 shadow bg-base-100 rounded-box">
+						class="menu menu-sm dropdown-content space-y-2 mt-3 -ml-8 z-20 px-4 py-2 shadow bg-base-100 rounded-box">
 						<li><a class="whitespace-nowrap"
-							href="{% url 'about' %}">About Us</a></li>
-						<li><a>Team</a></li>
+							href="{% url 'home' %}">Home</a></li>
+						<li><a href="{% url 'about' %}" class="whitespace-nowrap">About Us</a></li>
 						<li>
 							<a href="{% url 'contact' %}">
 								Contact
+							</a>
+						</li>
+						<li>
+							<a href="{% url 'user_profile' %}">
+								Profile
 							</a>
 						</li>
 					</ul>
