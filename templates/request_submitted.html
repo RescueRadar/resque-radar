@@ -1,17 +1,19 @@
 {% extends "base.html" %} {% block main %}
 
-<div class="h-[90dvh] flex items-center justify-center">
-	<div>
-		<h1 class="text-2xl font-bold text-center mb-4">Request already submitted</h1>
-		<p class="max-w-3xl text-center">
-			You have already submitted a request for your agency. Please wait while our team reviews your request. You
-			will be notified via email once your request is approved.
-		</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request Submitted</title>
+</head>
+<body>
+    <h1>Your request has been submitted.</h1>
 
-		<a href="{% url 'home' %}" class="block link link-accent no-underline hover:underline text-center mt-4"
-			>Go back to home</a
-		>
-	</div>
-</div>
+    {% if not form_submitted %}
+    <p>If you want to submit a new form, click the button below:</p>
+    <a href="{% url 'profile' %}" class="btn btn-primary">Submit New Form</a>
+    {% endif %}
+</body>
+</html>
+
 
 {% endblock main %}
