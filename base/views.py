@@ -23,7 +23,8 @@ def user_report(request):
 @login_required
 @agency_req
 def dashboard(request):
-    return render(request, 'dashboard.html')
+    all_agencies = agency.objects.all()
+    return render(request, 'dashboard.html', {'all_agencies': all_agencies})
 
 @login_required
 def user_profile(request):

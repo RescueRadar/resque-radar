@@ -44,6 +44,23 @@
 
 	{% comment %} Feed {% endcomment %}
 	<div class="px-6 space-y-6">
+
+		{% for agency in all_agencies %}
+		<div
+			class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg hover:bg-neutral hover:cursor-pointer transition duration-300">
+			<div class="flex items-center mb-4">
+				<div class="indicator mr-4">
+					<span class="indicator-item badge badge-sm badge-accent"></span>
+					<h3 class="pr-4 text-xl font-bold">{{ agency.name }}</h3>
+				</div>
+				<p>- {{ agency.locality }}</p>
+			</div>
+			<p>
+				{{ agency.about }}
+			</p>
+		</div>
+		{% endfor %}
+
 		<div
 			class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg hover:bg-neutral hover:cursor-pointer transition duration-300">
 			<div class="flex items-center mb-4">
