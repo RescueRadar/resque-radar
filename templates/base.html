@@ -48,10 +48,12 @@
 						<li><a href="{% url 'contact' %}" class="btn btn-ghost btn-sm">
 							Contact
 						</a></li>
+						{% if request.user.is_authenticated %}
 						<p class="px-2">|</p>
 						<li><a href="{% url 'user_profile' %}" class="btn btn-ghost btn-sm">
 							Profile
 						</a></li>
+						{% endif %}
 					</ul>
 				</div>
 				<div class="dropdown md:hidden">

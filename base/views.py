@@ -5,6 +5,9 @@ from django.contrib.auth.decorators import login_required
 from .decorators import agency_req
 # Create your views here.
 def home(request):
+    if request.user.is_authenticated:
+        if agency.objects.filter(user=request.user).exists():
+            return redirect('dashboard')
     return render(request, 'home.html')
 
 def about(request):
@@ -13,9 +16,13 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
 
+
+@login_required
+@agency_req
 def dashboard(request):
     return render(request, 'dashboard.html')
 
+@login_required
 def user_profile(request):
     return render(request, 'user_profile.html')
 
