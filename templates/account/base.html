@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block script %}
+<link rel="stylesheet" href="{% static 'allauth_ui/output.css' %}">
+{% endblock script %}
+
+{% block main %}
+    {% if messages %}
+    <div>
+      {% for message in messages %}
+      <div class="flex justify-center">
+        <div class="flex items-center px-4 py-3 text-sm font-bold text-white bg-blue-500 rounded-xl mb-4 w-1/2" role="alert">
+          <p>{{ message }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% block content %}
+    <div class="flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center p-12 backdrop-blur bg-accent/5 rounded shadow-lg grow-0 rounded-2xl border border-accent text-white">
+        {% block whitebox %}
+        {% endblock %}
+    </div>
+  </div>
+    {% endblock %}
+{% endblock main %}
