@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block main %} {% load static %} {% comment %} Vertical Navigation {% endcomment %}
-<div class="h-screen w-52 border-r-2 border-base-200 fixed flex flex-col justify-between items-center py-4">
-	<ul class="space-y-4 my-4">
+<div
+	class="md:h-screen md:w-52 w-full border-r-2 border-base-200 md:fixed flex flex-col justify-between items-center py-4">
+	<ul class="md:space-y-4 flex md:flex-col flex-row items-center justify-center">
 		<li>
 			<a href="" class="btn btn-ghost btn-sm">
 				<i class="fa-solid fa-table-columns"></i>
@@ -19,7 +20,7 @@
 	</ul>
 </div>
 
-<div class="w-[calc(100%-13rem)] min-h-[80dvh] ml-[13rem] flex flex-col">
+<div class="md:w-[calc(100%-13rem)] w-full min-h-[80dvh] md:ml-[13rem] flex flex-col">
 	{% comment %} SearchBar {% endcomment %}
 	<div class="w-full flex p-6">
 		<input type="text" class="input input-bordered w-full" placeholder="Search your feed..." />
@@ -43,9 +44,13 @@
 
 	{% comment %} Feed {% endcomment %}
 	<div class="px-6 space-y-6">
-		<div class="bg-base-200 rounded-xl shadow p-6">
+		<div
+			class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg hover:bg-neutral hover:cursor-pointer transition duration-300">
 			<div class="flex items-center mb-4">
-				<h3 class="mr-2 text-xl font-bold">Rescue Team 1</h3>
+				<div class="indicator mr-4">
+					<span class="indicator-item badge badge-sm badge-accent"></span>
+					<h3 class="pr-4 text-xl font-bold">Rescue Team 1</h3>
+				</div>
 				<p>- Region Name</p>
 			</div>
 			<p>
@@ -54,9 +59,13 @@
 				error nisi iusto iure!
 			</p>
 		</div>
-		<div class="bg-base-200 rounded-xl shadow p-6">
+		<div
+			class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg hover:bg-neutral hover:cursor-pointer transition duration-300">
 			<div class="flex items-center mb-4">
-				<h3 class="mr-2 text-xl font-bold">Rescue Team 1</h3>
+				<div class="indicator mr-4">
+					<span class="indicator-item badge badge-sm badge-error"></span>
+					<h3 class="pr-4 text-xl font-bold">Rescue Team 2</h3>
+				</div>
 				<p>- Region Name</p>
 			</div>
 			<p>
@@ -65,9 +74,13 @@
 				error nisi iusto iure!
 			</p>
 		</div>
-		<div class="bg-base-200 rounded-xl shadow p-6">
+		<div
+			class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg hover:bg-neutral hover:cursor-pointer transition duration-300">
 			<div class="flex items-center mb-4">
-				<h3 class="mr-2 text-xl font-bold">Rescue Team 1</h3>
+				<div class="indicator mr-4">
+					<span class="indicator-item badge badge-sm badge-warning"></span>
+					<h3 class="pr-4 text-xl font-bold">Rescue Team 3</h3>
+				</div>
 				<p>- Region Name</p>
 			</div>
 			<p>
