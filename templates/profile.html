@@ -1,11 +1,102 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block main %}
 
-{% block main %}
+<div class="flex items-center justify-center my-12">
+	<form class="flex flex-col w-full max-w-2xl border-base-300 p-10 border rounded-xl shadow-lg">
+		<h1 class="text-2xl mb-6 text-center font-bold">Register your Agency</h1>
+		<p class="mb-12 text-sm text-center">
+			Fill in the form below to register your Agency. Remember to fill in the details correctly as you won't be
+			able to change them during the evaluation process.
 
-<form>
-    <input name="name" type="text" placeholder="Name">
-    <input name="email" type="email" placeholder="Email">
-    
-</form>
+			<br />
+			<br />
+
+			All the fields are mandatory. If you have any queries, please contact us
+			<a class="hover:underline link-accent no-underline" href="{% url 'contact' %}">Here</a>.
+		</p>
+		<label for="name" class="label">
+			<span class="label-text font-bold">Name of your Agency</span>
+		</label>
+		<input
+			name="name"
+			type="text"
+			placeholder="Official Name of your Agency"
+			class="input input-bordered w-full mb-4" />
+		<label for="address" class="label">
+			<span class="label-text font-bold">Address of your Agency</span>
+		</label>
+		<input
+			name="address"
+			type="text"
+			placeholder="Complete Address of your Agency"
+			class="input input-bordered w-full mb-4" />
+
+		<label for="phone" class="label">
+			<span class="label-text font-bold">Phone Number</span>
+		</label>
+		<input name="phone" type="tel" placeholder="(+91) ----- -----" class="input input-bordered w-full mb-4" />
+		<label for="website" class="label">
+			<span class="label-text font-bold">Website</span>
+		</label>
+		<input
+			name="website"
+			type="text"
+			placeholder="Official Website of your Agency"
+			class="input input-bordered w-full mb-4" />
+
+		<label for="about" class="label">
+			<span class="label-text font-bold">About your Agency</span>
+		</label>
+		<textarea
+			name="about"
+			type="text"
+			rows="5"
+			placeholder="Explain about your Agency and the services you provide"
+			class="textarea textarea-bordered w-full mb-4 text-md"></textarea>
+
+		<div class="flex">
+			<div class="w-full mr-4">
+				<label for="state" class="label">
+					<span class="label-text font-bold">State</span>
+				</label>
+				<input name="state" type="text" placeholder="State" class="input input-bordered w-full mb-4" />
+			</div>
+			<div class="w-full">
+				<label for="city" class="label">
+					<span class="label-text font-bold">City</span>
+				</label>
+				<input name="city" type="text" placeholder="City" class="input input-bordered w-full mb-4" />
+			</div>
+		</div>
+
+		<div class="flex">
+			<div class="w-full mr-4">
+				<label for="manpower" class="label">
+					<span class="label-text font-bold">Manpower</span>
+				</label>
+				<select class="select w-full" name="manpower">
+					<option value="50">50+</option>
+					<option value="100">100+</option>
+					<option value="300">300+</option>
+					<option value="500">500+</option>
+					<option value="1000">1000+</option>
+				</select>
+			</div>
+			<div class="w-full">
+				<label for="volunteers" class="label">
+					<span class="label-text font-bold">Volunteers</span>
+				</label>
+				<select class="select w-full" name="volunteers">
+					<option value="50">50+</option>
+					<option value="100">100+</option>
+					<option value="300">300+</option>
+					<option value="500">500+</option>
+					<option value="1000">1000+</option>
+				</select>
+			</div>
+		</div>
+
+		<button class="btn btn-accent w-full mt-4">Submit</button>
+	</form>
+</div>
 
 {% endblock main %}

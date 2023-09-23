@@ -73,25 +73,35 @@
 		We are always looking to expand our network of agencies and are open to working with new agencies. If you are
 		interested in working with us, please register your agency by clicking the button below.
 	</p>
-	<button class="btn btn-accent mt-4 mx-8 w-full max-w-md">Register Your Agency</button>
+	<div class="w-full px-8 flex items-center justify-center">
+		<button class="btn btn-accent w-full max-w-md">Register Your Agency</button>
+	</div>
 </div>
 
 {% comment %} Footer {% endcomment %}
 <footer class="bg-base-300 px-8 py-12">
-	<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+	<div class="grid grid-cols-1 text-center md:text-start md:grid-cols-4 gap-8">
 		<h3 class="text-2xl font-bold whitespace-nowrap row-span-3 my-auto md:my-0 md:row-span-1">Resque Radar</h3>
-		<ul class="flex flex-col justify-start items-start text-gray-500 text-sm space-y-2 whitespace-nowrap">
+		<ul
+			class="flex flex-col justify-start items-center md:items-start text-gray-500 text-sm space-y-2 whitespace-nowrap">
 			<li>
 				<a class="hover:underline" href="{% url 'about' %}">About Us</a>
 			</li>
 			<li>
-				<a href="#" class="hover:underline">The Team</a>
+				<a
+					href="https://github.com/RescueRadar"
+					class="hover:underline"
+					target="_blank"
+					rel="noopener noreferrer"
+					>The Team</a
+				>
 			</li>
 			<li>
-				<a href="#" class="hover:underline">Need Help?</a>
+				<a class="hover:underline" href="{% url 'contact' %}">Need Help?</a>
 			</li>
 		</ul>
-		<ul class="flex flex-col justify-start items-start text-gray-500 text-sm space-y-2 whitespace-nowrap">
+		<ul
+			class="flex flex-col justify-start items-center md:items-start text-gray-500 text-sm space-y-2 whitespace-nowrap">
 			<li>
 				<i class="fa-brands fa-facebook"></i>
 				<a href="#" class="hover:underline">Facebook</a>
@@ -109,7 +119,8 @@
 				<a href="#" class="hover:underline">LinkedIn</a>
 			</li>
 		</ul>
-		<ul class="flex flex-col justify-start items-start text-gray-500 text-sm space-y-2 whitespace-nowrap">
+		<ul
+			class="flex flex-col justify-start items-center md:items-start text-gray-500 text-sm space-y-2 whitespace-nowrap">
 			<li>
 				<a href="#" class="hover:underline">Privacy Policy</a>
 			</li>
