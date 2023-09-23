@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% block main %} {% load static %} {% comment %} Vertical Navigation {% endcomment %}
+<div class="h-screen w-52 border-r-2 border-base-200 fixed flex flex-col justify-between items-center py-4">
+	<ul class="space-y-4 my-4">
+		<li>
+			<a href="" class="btn btn-ghost btn-sm">
+				<i class="fa-solid fa-table-columns"></i>
+				Dashboard
+			</a>
+		</li>
+		<li>
+			<a href="" class="btn btn-ghost btn-sm">
+				<i class="fa-solid fa-door-open"></i>
+				Rooms
+			</a>
+		</li>
+		<li>
+			<a href="" class="btn btn-ghost btn-sm"><i class="fa-solid fa-tower-broadcast"></i> Victims Portal </a>
+		</li>
+	</ul>
+</div>
+
+<div class="w-[calc(100%-13rem)] min-h-screen ml-[13rem] flex flex-col items-center">
+	{% comment %} SearchBar {% endcomment %}
+	<div class="w-full flex p-6">
+		<input type="text" class="input input-bordered w-full" placeholder="Search your feed..." />
+		<details class="dropdown ml-4">
+			<summary class="text-xl btn btn-ghost">
+				<i class="fa-solid fa-bars"></i>
+			</summary>
+			<ul class="p-2 shadow menu dropdown-content z-[1] bg-base-200 rounded-box">
+				<h4 class="font-bold my-2 text-center">Filter By</h4>
+				<li><a class="whitespace-nowrap">RO Status</a></li>
+				<li><a>Region</a></li>
+			</ul>
+		</details>
+		<button class="btn btn-ghost text-xl">
+			<div class="indicator">
+				<span class="indicator-item badge badge-accent badge-sm"></span>
+				<i class="fa-solid fa-bell"></i>
+			</div>
+		</button>
+	</div>
+
+	{% comment %} Feed {% endcomment %}
+	<div>
+		<div>
+			<h3>Rescue Team 1</h3>
+			<p>Region Name</p>
+		</div>
+	</div>
+</div>
+{% endblock %}

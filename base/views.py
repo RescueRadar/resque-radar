@@ -12,7 +12,8 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
 
-
+def dashboard(request):
+    return render(request, 'dashboard.html')
 @login_required
 def profile(request):
     if request.method=="POST":
