@@ -8,6 +8,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('', base_views.home, name='home'),
     path('about/', base_views.about, name='about'),
+    path('contact/', base_views.contact, name='contact'),
     # path('', include(router.urls)),
     # path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

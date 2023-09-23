@@ -40,11 +40,14 @@
 				<div class="mr-2 hidden md:block">
 					<ul tabindex="0" class="flex text-md">
 						<li><a class="btn btn-ghost btn-sm"
+							href="{% url 'home' %}">Home</a></li>
+						<p class="px-2">|</p>
+						<li><a class="btn btn-ghost btn-sm"
 								href="{% url 'about' %}">About Us</a></li>
 						<p class="px-2">|</p>
-						<li><a class="btn btn-ghost btn-sm">Team</a></li>
-						<p class="px-2">|</p>
-						<li><a class="btn btn-ghost btn-sm">Contact</a></li>
+						<li><a href="{% url 'contact' %}" class="btn btn-ghost btn-sm">
+							Contact
+						</a></li>
 					</ul>
 				</div>
 				<div class="dropdown md:hidden">
@@ -68,7 +71,11 @@
 						<li><a class="whitespace-nowrap"
 							href="{% url 'about' %}">About Us</a></li>
 						<li><a>Team</a></li>
-						<li><a>Contact</a></li>
+						<li>
+							<a href="{% url 'contact' %}">
+								Contact
+							</a>
+						</li>
 					</ul>
 				</div>
 				<button
