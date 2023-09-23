@@ -3,10 +3,10 @@
 {% block head_title %}Sign up{% endblock %}
 
 {% block whitebox %}
-<h1 class="mb-5 text-3xl text-center">Sign up</h1>
-<form id="signup_form" method="post" action="{% url 'account_signup' %}" novalidate>
+<h1 class="mb-5 text-3xl text-center text-base-content font-bold">Sign up</h1>
+<form id="signup_form" method="post" action="{% url 'account_signup' %}" novalidate class="w-full">
   {% include "account/_render_form.html" %}
   {% include "account/_button.html" with text="Sign up" %}
 </form>
-<a class="self-center pt-8 text-xs text-teal-400 justify-self-center hover:text-teal-500" href="{{ login_url }}">Already have an account? Sign in.</a>
+<a class="self-center pt-8 text-base-content text-xs justify-self-center hover:text-teal-500" href="{{ login_url }}">Already have an account? Sign in.</a>
 {% endblock %}
