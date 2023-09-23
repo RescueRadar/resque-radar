@@ -2,7 +2,7 @@
 
 <div class="flex items-center justify-center my-12">
 	<form class="flex flex-col w-full max-w-2xl border-base-300 p-10 border rounded-xl shadow-lg" method="post">
-        {% csrf_token %}
+		{% csrf_token %}
 		<h1 class="text-2xl mb-6 text-center font-bold">Register your Agency</h1>
 		<p class="mb-12 text-sm text-center">
 			Fill in the form below to register your Agency. Remember to fill in the details correctly as you won't be
@@ -21,7 +21,8 @@
 			name="name"
 			type="text"
 			placeholder="Official Name of your Agency"
-			class="input input-bordered w-full mb-4" />
+			class="input input-bordered w-full mb-4"
+			required />
 		<label for="address" class="label">
 			<span class="label-text font-bold">Address of your Agency</span>
 		</label>
@@ -29,12 +30,18 @@
 			name="address"
 			type="text"
 			placeholder="Complete Address of your Agency"
-			class="input input-bordered w-full mb-4" />
+			class="input input-bordered w-full mb-4"
+			required />
 
 		<label for="phone" class="label">
 			<span class="label-text font-bold">Phone Number</span>
 		</label>
-		<input name="phone" type="tel" placeholder="(+91) ----- -----" class="input input-bordered w-full mb-4" />
+		<input
+			name="phone"
+			type="tel"
+			placeholder="(+91) ----- -----"
+			class="input input-bordered w-full mb-4"
+			required />
 		<label for="website" class="label">
 			<span class="label-text font-bold">Website</span>
 		</label>
@@ -42,7 +49,8 @@
 			name="website"
 			type="text"
 			placeholder="Official Website of your Agency"
-			class="input input-bordered w-full mb-4" />
+			class="input input-bordered w-full mb-4"
+			required />
 
 		<label for="about" class="label">
 			<span class="label-text font-bold">About your Agency</span>
@@ -52,20 +60,22 @@
 			type="text"
 			rows="5"
 			placeholder="Explain about your Agency and the services you provide"
-			class="textarea textarea-bordered w-full mb-4 text-md"></textarea>
+			class="textarea textarea-bordered w-full mb-4 text-md"
+			required
+			minlength="100"></textarea>
 
 		<div class="flex">
 			<div class="w-full mr-4">
 				<label for="state" class="label">
 					<span class="label-text font-bold">State</span>
 				</label>
-				<input name="state" type="text" placeholder="State" class="input input-bordered w-full mb-4" />
+				<input name="state" type="text" placeholder="State" class="input input-bordered w-full mb-4" required />
 			</div>
 			<div class="w-full">
 				<label for="city" class="label">
 					<span class="label-text font-bold">City</span>
 				</label>
-				<input name="city" type="text" placeholder="City" class="input input-bordered w-full mb-4" />
+				<input name="city" type="text" placeholder="City" class="input input-bordered w-full mb-4" required />
 			</div>
 		</div>
 
