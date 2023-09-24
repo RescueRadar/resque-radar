@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4=+_96i2jaye4i1-1o)xa+-mid$7j^&jd93b#c!=u2!p+_yqsr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['rescueradar.azurewebsites.net', '127.0.0.1','localhost']
 CSRF_TRUSTED_ORIGINS = [
