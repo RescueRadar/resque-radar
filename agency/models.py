@@ -7,19 +7,19 @@ from django.dispatch import receiver
 
 class agency(models.Model):
     user = models.OneToOneField('auth.User', on_delete=models.CASCADE)
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=500)
     address = models.CharField(max_length=500)
     phone = models.CharField(max_length=50)
-    email = models.EmailField(max_length=50)
-    website = models.CharField(max_length=50)
+    email = models.EmailField(max_length=500)
+    website = models.CharField(max_length=500)
     about = models.TextField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     location_lat = models.FloatField(default=0.0) 
     location_long = models.FloatField(default=0.0)  
-    locality = models.CharField(max_length=50)
-    city = models.CharField(max_length=50)
-    state = models.CharField(max_length=50)
+    locality = models.CharField(max_length=500)
+    city = models.CharField(max_length=500)
+    state = models.CharField(max_length=500)
     manpower = models.IntegerField()
     volunteers = models.IntegerField()
     category_of_calamity = models.CharField(max_length=50)
@@ -34,19 +34,19 @@ class agency(models.Model):
 
 class non_approved_agency(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=50, null=False)
+    name = models.CharField(max_length=500, null=False)
     address = models.CharField(max_length=500, null=False)
     phone = models.CharField(max_length=50, null=False)
-    email = models.EmailField(max_length=50, null=False)
-    website = models.CharField(max_length=50, null=False)
+    email = models.EmailField(max_length=500, null=False)
+    website = models.CharField(max_length=500, null=False)
     about = models.TextField(max_length=1000, null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     location_lat = models.FloatField(default=0.0, null=False) 
     location_long = models.FloatField(default=0.0, null=False)  
-    locality = models.CharField(max_length=50, null=False)
-    city = models.CharField(max_length=50, null=False)
-    state = models.CharField(max_length=50, null=False)
+    locality = models.CharField(max_length=500, null=False)
+    city = models.CharField(max_length=500, null=False)
+    state = models.CharField(max_length=500, null=False)
     manpower = models.IntegerField(null=False)
     volunteers = models.IntegerField(null=False)
     category_of_calamity = models.CharField(max_length=50, null=False)
@@ -98,6 +98,13 @@ class requests(models.Model):
     
     class Meta:
         verbose_name_plural = "requests"
+
+
+class victims(models.Model):
+    name = models.CharField(max_length=100)
+    number = models.CharField(max_length=100)
+    type_incident = models.CharField(max_length=100)
+    num_of_people = models.IntegerField()
 
 
 @receiver(post_save, sender=non_approved_agency)
