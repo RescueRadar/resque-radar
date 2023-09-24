@@ -28,7 +28,7 @@ Follow the steps [here](docs/installation.md) to install the project locally on 
 
 This project was made for the [Smart India Hackathon 2023](https://www.sih.gov.in/) for the problem statement 1440. The team members are:
 
-- [Abhishek Sahoo](https://github.com/abhisek-1221) - Team Lead
+- [Abhisek Sahoo](https://github.com/abhisek-1221) - Team Lead
 - [Rachit Khurana](https://github.com/notnotrachit) - Django Developer
 - [Chirag Aggarwal](https://github.com/ChiragAgg5k) - Frontend Developer
 - [Aviral](https://github.com/PlasmicZ) - UI Designer
