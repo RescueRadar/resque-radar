@@ -18,6 +18,7 @@ urlpatterns = [
     path('user_report/', base_views.user_report, name='user_report'),
     path('rooms/', base_views.rooms, name='rooms'),
     path('victims_portal/', base_views.victims_portal, name='victims_portal'),
+    path('chatroom/',base_views.chatroom, name='chatroom')
     # path('', include(router.urls)),
     # path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]

@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block main %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Room</title>
+  <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
+  <style>
+  </style>
+</head>
+<body class="flex h-screen bg-gray-900 text-white">
+
+<div class="w-1/4 p-6 pt-20 bg-gray-800">
+        <div class="bg-gradient-to-r from-indigo-800 to-purple-800 rounded-lg p-6">
+            <div class="bg-gradient-to-r from-green-800 to black-600 rounded-lg">
+                <h2 class="text-lg font-bold mb-4 text-yellow-400">Members</h2>
+            </div>
+          <ul class="pt-10 pl-10">
+            <li class="mb-2">Agency 1</li>
+            <li class="mb-2">Agency 2</li>
+            <li class="mb-2">Agency 3</li>
+          </ul>
+        </div>
+</div>
+
+  <div class="w-3/4 p-20 pt-32">
+    <div class="bg-gray-800 rounded-lg shadow-lg p-6 mb-6">
+      <div class="mb-4">
+        <strong class="text-yellow-400">Agency 2:</strong> Hello! Medical Assiatance will reach in 23 minutes
+      </div>
+      <div class="mb-4">
+        <strong class="text-green-400">You:</strong> 12 people critically injured come fast!
+      </div>
+    </div>
+
+    <div class="flex">
+      <input type="text" placeholder="Type a message..." class="flex-1 rounded-l-lg p-3 bg-gray-800 text-white">
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-r-lg">Send</button>
+    </div>
+  </div>
+
+</body>
+</html>
+{% endblock %}
+

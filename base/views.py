@@ -29,6 +29,9 @@ def victims_portal(request):
 def rooms(request):
     return render(request, 'rooms.html')
 
+def chatroom(request):
+    return render(request, 'chatroom.html')
+
 @login_required
 @agency_req
 def dashboard(request):
