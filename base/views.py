@@ -19,6 +19,15 @@ def contact(request):
 def user_report(request):
     return render(request, 'user_report.html')
 
+@login_required
+@agency_req
+def victims_portal(request):
+    return render(request, 'victims_portal.html')
+
+@login_required
+@agency_req
+def rooms(request):
+    return render(request, 'rooms.html')
 
 @login_required
 @agency_req

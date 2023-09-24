@@ -1,0 +1,83 @@
+{% extends 'base.html' %} {% block main %} {% load static %} {% comment %} Vertical Navigation {% endcomment %}
+<div
+	class="md:h-screen md:w-52 w-full border-r-2 border-base-200 md:fixed flex flex-col justify-between items-center py-4">
+	<ul class="md:space-y-4 flex md:flex-col flex-row items-center justify-center">
+		<li>
+			<a href="{% url 'dashboard' %}" class="btn btn-ghost btn-sm">
+				<i class="fa-solid fa-table-columns"></i>
+				Dashboard
+			</a>
+		</li>
+		<li>
+			<a href="{% url 'rooms' %}" class="btn btn-ghost btn-sm">
+				<i class="fa-solid fa-door-open"></i>
+				Rooms
+			</a>
+		</li>
+		<li>
+			<a href="{% url 'victims_portal' %}" class="btn btn-ghost btn-sm"><i class="fa-solid fa-tower-broadcast"></i> Victims Portal </a>
+		</li>
+	</ul>
+</div>
+
+<div class="md:w-[calc(100%-13rem)] w-full min-h-[80dvh] md:ml-[13rem] flex flex-col p-8">
+	<h1
+		class="text-2xl font-bold mb-2"
+	>
+		Victims Portal
+	</h1>
+	<p
+	class="mb-6"
+	>
+		Here you can view all the reports of disaster or calamity that the victims have submitted. It is important to note that these reports are <span class="text-error">not verified</span> by any authority and are only for reference purposes.
+	</p>
+
+	<div class="w-full flex justify-between">
+		<details class="dropdown ml-4">
+			<summary class="text-xl btn btn-ghost">
+				<i class="fa-solid fa-bars"></i>
+			</summary>
+			<ul class="p-2 shadow menu dropdown-content z-[1] bg-base-200 rounded-box">
+				<h4 class="font-bold my-2 text-center">Filter By Type</h4>
+				<li><a class="whitespace-nowrap">Medical</a></li>
+				<li><a class="whitespace-nowrap">Fire</a></li>
+				<li><a class="whitespace-nowrap">Earthquake</a></li>
+				<li><a class="whitespace-nowrap">Floot</a></li>
+				<li><a class="whitespace-nowrap">Other</a></li>
+			</ul>
+		</details>
+		<input type="text" class="input input-bordered w-full" placeholder="Search for a particular report...">
+	</div>
+
+	<div
+	class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8"
+	>
+		<div
+		class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg border-base-200">
+		<div class="flex mb-2 items-center">
+			<h3 class="font-bold text-xl">
+				Medical
+			</h3>
+			<p class="text-sm">
+				- 20-30 people affected
+			</p>
+		</div>
+		<div class="text-sm">
+			<p class="mb-1">
+				<i class="fa-solid fa-user mr-2"></i>
+				Name of Respondent
+			</p>
+			<p class="mb-1">
+				<i class="fa-solid fa-phone mr-2"></i>
+				1234567890
+			</p>
+			<p>
+				<i class="fa-solid fa-map-marker mr-2"></i>
+				Location
+			</p>
+		</div>
+	</div>
+	</div>
+</div>
+
+{% endblock %}

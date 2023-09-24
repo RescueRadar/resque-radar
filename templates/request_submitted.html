@@ -1,18 +1,4 @@
-{% extends "base.html" %} {% block main %} {% comment %} <!DOCTYPE html>
-<html>
-	<head>
-		<title>Request Submitted</title>
-	</head>
-	<body>
-		<h1>Your request has been submitted.</h1>
-
-		{% if not form_submitted %}
-		<p>If you want to submit a new form, click the button below:</p>
-		<a href="{% url 'profile' %}" class="btn btn-primary">Submit New Form</a>
-		{% endif %}
-	</body>
-</html>
-{% endcomment %}
+{% extends "base.html" %} {% block main %}
 
 <div class="h-[90dvh] flex items-center justify-center">
 	<div>

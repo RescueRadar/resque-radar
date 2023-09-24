@@ -3,19 +3,19 @@
 	class="md:h-screen md:w-52 w-full border-r-2 border-base-200 md:fixed flex flex-col justify-between items-center py-4">
 	<ul class="md:space-y-4 flex md:flex-col flex-row items-center justify-center">
 		<li>
-			<a href="" class="btn btn-ghost btn-sm">
+			<a href="{% url 'dashboard' %}" class="btn btn-ghost btn-sm">
 				<i class="fa-solid fa-table-columns"></i>
 				Dashboard
 			</a>
 		</li>
 		<li>
-			<a href="" class="btn btn-ghost btn-sm">
+			<a href="{% url 'rooms' %}" class="btn btn-ghost btn-sm">
 				<i class="fa-solid fa-door-open"></i>
 				Rooms
 			</a>
 		</li>
 		<li>
-			<a href="" class="btn btn-ghost btn-sm"><i class="fa-solid fa-tower-broadcast"></i> Victims Portal </a>
+			<a href="{% url 'victims_portal' %}" class="btn btn-ghost btn-sm"><i class="fa-solid fa-tower-broadcast"></i> Victims Portal </a>
 		</li>
 	</ul>
 </div>
@@ -47,8 +47,8 @@
 
 		{% for agency in all_agencies %}
 		<div
-			class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg hover:bg-neutral hover:cursor-pointer transition duration-300">
-			<div class="flex items-center mb-4">
+		class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg hover:bg-base-base-300 hover:border-base-content/50 border-2 border-base-200 hover:cursor-pointer transition duration-300">
+		<div class="flex items-center mb-4">
 				<div class="indicator mr-4">
 					<span class="indicator-item badge badge-sm badge-accent"></span>
 					<h3 class="pr-4 text-xl font-bold">{{ agency.name }}</h3>
@@ -60,52 +60,6 @@
 			</p>
 		</div>
 		{% endfor %}
-
-		<div
-			class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg hover:bg-neutral hover:cursor-pointer transition duration-300">
-			<div class="flex items-center mb-4">
-				<div class="indicator mr-4">
-					<span class="indicator-item badge badge-sm badge-accent"></span>
-					<h3 class="pr-4 text-xl font-bold">Rescue Team 1</h3>
-				</div>
-				<p>- Region Name</p>
-			</div>
-			<p>
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit ipsum unde vitae, obcaecati
-				deleniti corrupti minima ut inventore dolorum quae numquam neque maxime adipisci cumque, recusandae
-				error nisi iusto iure!
-			</p>
-		</div>
-		<div
-			class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg hover:bg-neutral hover:cursor-pointer transition duration-300">
-			<div class="flex items-center mb-4">
-				<div class="indicator mr-4">
-					<span class="indicator-item badge badge-sm badge-error"></span>
-					<h3 class="pr-4 text-xl font-bold">Rescue Team 2</h3>
-				</div>
-				<p>- Region Name</p>
-			</div>
-			<p>
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit ipsum unde vitae, obcaecati
-				deleniti corrupti minima ut inventore dolorum quae numquam neque maxime adipisci cumque, recusandae
-				error nisi iusto iure!
-			</p>
-		</div>
-		<div
-			class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg hover:bg-neutral hover:cursor-pointer transition duration-300">
-			<div class="flex items-center mb-4">
-				<div class="indicator mr-4">
-					<span class="indicator-item badge badge-sm badge-warning"></span>
-					<h3 class="pr-4 text-xl font-bold">Rescue Team 3</h3>
-				</div>
-				<p>- Region Name</p>
-			</div>
-			<p>
-				Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit ipsum unde vitae, obcaecati
-				deleniti corrupti minima ut inventore dolorum quae numquam neque maxime adipisci cumque, recusandae
-				error nisi iusto iure!
-			</p>
-		</div>
 	</div>
 </div>
 {% endblock %}
