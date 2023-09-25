@@ -1,109 +1,109 @@
 <!DOCTYPE html>
 {% load static %}
 <html class"scroll-smooth">
-	<head>
-		<meta charset="utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<title>{% block title %}Resque Radar{% endblock %}</title>
-		<meta name="description" content="" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="" />
-		<link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.7/dist/full.css" rel="stylesheet" type="text/css" />
-		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<script src="https://cdn.tailwindcss.com"></script>
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>{% block title %}Resque Radar{% endblock %}</title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="" />
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@3.7.7/dist/full.css" rel="stylesheet" type="text/css" />
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/theme-change@2.0.2/index.js"></script>
 
-		<link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css" />
-		<link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css" />
-		<link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css" />
+        <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css" />
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap" rel="stylesheet">
 
-		<style>
-			body {
-				font-family: 'Montserrat', sans-serif;
-			}
-		</style>
-	</head>
-	<body>
-		<script>
-  			AOS.init();
-		</script>
-		<div class="navbar h-20 py-4 bg-base-200 fixed z-50">
-			<div class="navbar-start">
-				<a class="btn btn-ghost normal-case text-xl" href="/">Resque Radar</a>
-			</div>
-			<div class="navbar-end">
-				<div class="mr-2 hidden md:block">
-					<ul tabindex="0" class="flex text-md">
-						<li><a class="btn btn-ghost btn-sm"
-							href="{% url 'home' %}">Home</a></li>
-						<p class="px-2">|</p>
-						<li><a class="btn btn-ghost btn-sm"
-								href="{% url 'about' %}">About Us</a></li>
-						<p class="px-2">|</p>
-						<li><a href="{% url 'contact' %}" class="btn btn-ghost btn-sm">
-							Contact
-						</a></li>
-						{% if request.user.is_authenticated %}
-						<p class="px-2">|</p>
-						<li><a href="{% url 'user_profile' %}" class="btn btn-ghost btn-sm">
-							Profile
-						</a></li>
-						{% endif %}
-					</ul>
-				</div>
-				<div class="dropdown md:hidden">
-					<label tabindex="0" class="btn btn-ghost btn-circle">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							class="h-5 w-5"
-							fill="none"
-							viewBox="0 0 24 24"
-							stroke="currentColor">
-							<path
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								stroke-width="2"
-								d="M4 6h16M4 12h16M4 18h7" />
-						</svg>
-					</label>
-					<ul
-						tabindex="0"
-						class="menu menu-sm dropdown-content space-y-2 mt-3 -ml-8 z-20 px-4 py-2 shadow bg-base-100 rounded-box">
-						<li><a class="whitespace-nowrap"
-							href="{% url 'home' %}">Home</a></li>
-						<li><a href="{% url 'about' %}" class="whitespace-nowrap">About Us</a></li>
-						<li>
-							<a href="{% url 'contact' %}">
-								Contact
-							</a>
-						</li>
-						<li>
-							<a href="{% url 'user_profile' %}">
-								Profile
-							</a>
-						</li>
-					</ul>
-				</div>
-				<button
-					data-toggle-theme="dark,light"
-					data-act-class="ACTIVECLASS"
-					class="flex items-center justify-center">
-					<input type="checkbox" class="toggle" />
-				</button>
-			</div>
-		</div>
+        <style>
+            body {
+                font-family: 'Montserrat', sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <script>
+            AOS.init();
+        </script>
+        <div class="navbar h-20 py-4 bg-base-200 fixed z-50">
+            <div class="navbar-start">
+                <a class="btn btn-ghost normal-case text-xl" href="/">Resque Radar</a>
+            </div>
+            <div class="navbar-end">
+                <div class="mr-2 hidden md:block">
+                    <ul tabindex="0" class="flex text-md">
+                        <li><a class="btn btn-ghost btn-sm"
+                               href="{% url 'home' %}">Home</a></li>
+                        <p class="px-2">|</p>
+                        <li><a class="btn btn-ghost btn-sm"
+                               href="{% url 'about' %}">About Us</a></li>
+                        <p class="px-2">|</p>
+                        <li><a href="{% url 'contact' %}" class="btn btn-ghost btn-sm">
+                            Contact
+                        </a></li>
+                        {% if request.user.is_authenticated %}
+                            <p class="px-2">|</p>
+                            <li><a href="{% url 'user_profile' %}" class="btn btn-ghost btn-sm">
+                                Profile
+                            </a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="dropdown md:hidden">
+                    <label tabindex="0" class="btn btn-ghost btn-circle">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-5 w-5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h7" />
+                        </svg>
+                    </label>
+                    <ul
+                        tabindex="0"
+                        class="menu menu-sm dropdown-content space-y-2 mt-3 -ml-8 z-20 px-4 py-2 shadow bg-base-100 rounded-box">
+                        <li><a class="whitespace-nowrap"
+                               href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}" class="whitespace-nowrap">About Us</a></li>
+                        <li>
+                            <a href="{% url 'contact' %}">
+                                Contact
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'user_profile' %}">
+                                Profile
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button
+                    data-toggle-theme="dark,light"
+                    data-act-class="ACTIVECLASS"
+                    class="flex items-center justify-center">
+                    <input type="checkbox" class="toggle" />
+                </button>
+            </div>
+        </div>
 
-		<div class="pt-20">
+        <div class="pt-20">
 
-		</div>
+        </div>
 
-		{% block main %}{% endblock %}
+        {% block main %}{% endblock %}
 
-		<script src="" async defer></script>
-	</body>
+        <script src="" async defer></script>
+    </body>
 </html>

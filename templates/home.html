@@ -1,135 +1,135 @@
 {% extends 'base.html' %} {% block main %} {% load static %}
-<div class="h-[60dvh] overflow-hidden bg-base-300 relative">
-	<img
-		src="{% static 'img/rescue_bg_1.jpg' %}"
-		alt="Rescue Background"
-		class="opacity-20 absolute top-0 h-[60dvh] w-full sm:h-auto pointer-events-none" />
-	<div class="flex flex-col sm:ml-8 mx-2 items-center sm:items-start text-center sm:text-start justify-center h-full">
-		<h1 class="text-4xl font-bold z-20">Resque Radar</h1>
-		<p class="text-xl z-20">Uniting Heroes, Saving Lives – One Umbrella, Infinite Hope.</p>
-		<a class="btn btn-accent mt-4 w-full max-w-md z-20 opacity-80" href="{% url "user_report" %}">In Need of Help?</a>
-	</div>
-</div>
+    <div class="h-[60dvh] overflow-hidden bg-base-300 relative">
+        <img
+            src="{% static 'img/rescue_bg_1.jpg' %}"
+            alt="Rescue Background"
+            class="opacity-20 absolute top-0 h-[60dvh] w-full sm:h-auto pointer-events-none" />
+        <div class="flex flex-col sm:ml-8 mx-2 items-center sm:items-start text-center sm:text-start justify-center h-full">
+            <h1 class="text-4xl font-bold z-20">Resque Radar</h1>
+            <p class="text-xl z-20">Uniting Heroes, Saving Lives – One Umbrella, Infinite Hope.</p>
+            <a class="btn btn-accent mt-4 w-full max-w-md z-20 opacity-80" href="{% url "user_report" %}">In Need of Help?</a>
+        </div>
+    </div>
 
-<div class="flex flex-col items-center justify-center my-8 py-12">
-	<h2 class="text-3xl font-bold text-center my-4">Our Mission</h2>
-	<p class="text-[min(1.25rem,3.5vw)] text-center max-w-4xl mt-4 px-4 mb-8 leading-relaxed">
-		Our goal at <span class="font-bold">Resque Radar</span> is to bring together the unsung heroes of different
-		rescue organizations under one strong roof, becoming a formidable force committed to offering quick, dependable,
-		and life-saving reactions during emergencies. When a disaster happens, we think that relief and assistance
-		should be given right away. <span class="underline">Every moment counts</span> because lives are on the line. We
-		have therefore set out to coordinate the operations of the rescue organizations, bringing them all together to
-		create a strong network of first responders. Our organization acts as the
-		<span class="text-accent">lighthouse</span> that directs various organizations, making sure they are organized
-		and prepared to effectively manage any emergency crisis.
-	</p>
-</div>
+    <div class="flex flex-col items-center justify-center my-8 py-12">
+        <h2 class="text-3xl font-bold text-center my-4">Our Mission</h2>
+        <p class="text-[min(1.25rem,3.5vw)] text-center max-w-4xl mt-4 px-4 mb-8 leading-relaxed">
+            Our goal at <span class="font-bold">Resque Radar</span> is to bring together the unsung heroes of different
+            rescue organizations under one strong roof, becoming a formidable force committed to offering quick, dependable,
+            and life-saving reactions during emergencies. When a disaster happens, we think that relief and assistance
+            should be given right away. <span class="underline">Every moment counts</span> because lives are on the line. We
+            have therefore set out to coordinate the operations of the rescue organizations, bringing them all together to
+            create a strong network of first responders. Our organization acts as the
+            <span class="text-accent">lighthouse</span> that directs various organizations, making sure they are organized
+            and prepared to effectively manage any emergency crisis.
+        </p>
+    </div>
 
-<div class="flex flex-col items-center justify-center bg-base-200 my-12 py-16">
-	<h2 class="text-3xl font-bold text-center my-4">Agencies We Work With</h2>
-	<p class="text-xl text-center my-4 leading-relaxed mx-8 max-w-5xl">
-		We work with a number of agencies to ensure that we are able to provide the best possible service to our
-		customers. We are always looking to expand our network of agencies and are open to working with new agencies.
-	</p>
-	<div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-8">
-		<div class="flex flex-col items-center justify-center">
-			<img
-				src="{% static 'img/agency_1.png' %}"
-				alt="Agency 1"
-				class="w-32 h-32 object-cover"
-				data-aos="flip-up" />
-			<p class="text-xl mt-4">NDMA</p>
-		</div>
-		<div class="flex flex-col items-center justify-center">
-			<img
-				src="{% static 'img/agency_2.png' %}"
-				alt="Agency 2"
-				class="w-32 h-32 object-cover"
-				data-aos="flip-up" />
-			<p class="text-xl mt-4">NDRF</p>
-		</div>
-		<div class="flex flex-col items-center justify-center">
-			<img src="{% static 'img/agency_3.png' %}" alt="Agency 3" class="w-32 h-32" data-aos="flip-up" />
-			<p class="text-xl mt-4">NIDM</p>
-		</div>
-		<div class="flex flex-col items-center justify-center">
-			<img src="{% static 'img/agency_4.png' %}" alt="Agency 4" class="w-32 h-32" data-aos="flip-up" />
-			<p class="text-xl mt-4">CDRI</p>
-		</div>
-	</div>
-</div>
+    <div class="flex flex-col items-center justify-center bg-base-200 my-12 py-16">
+        <h2 class="text-3xl font-bold text-center my-4">Agencies We Work With</h2>
+        <p class="text-xl text-center my-4 leading-relaxed mx-8 max-w-5xl">
+            We work with a number of agencies to ensure that we are able to provide the best possible service to our
+            customers. We are always looking to expand our network of agencies and are open to working with new agencies.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-8">
+            <div class="flex flex-col items-center justify-center">
+                <img
+                    src="{% static 'img/agency_1.png' %}"
+                    alt="Agency 1"
+                    class="w-32 h-32 object-cover"
+                    data-aos="flip-up" />
+                <p class="text-xl mt-4">NDMA</p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+                <img
+                    src="{% static 'img/agency_2.png' %}"
+                    alt="Agency 2"
+                    class="w-32 h-32 object-cover"
+                    data-aos="flip-up" />
+                <p class="text-xl mt-4">NDRF</p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+                <img src="{% static 'img/agency_3.png' %}" alt="Agency 3" class="w-32 h-32" data-aos="flip-up" />
+                <p class="text-xl mt-4">NIDM</p>
+            </div>
+            <div class="flex flex-col items-center justify-center">
+                <img src="{% static 'img/agency_4.png' %}" alt="Agency 4" class="w-32 h-32" data-aos="flip-up" />
+                <p class="text-xl mt-4">CDRI</p>
+            </div>
+        </div>
+    </div>
 
-<div class="flex w-full flex-col items-center justify-center my-12 py-12">
-	<h2 class="text-3xl font-bold text-center mb-4">Join Us</h2>
-	<p
-		class="text-xl text-center px-8 italic leading-relaxed max-w-5xl"
-		data-aos="fade-up"
-		data-aos-anchor-placement="top-bottom"
-		data-aos-duration="1000"
-		data-aos-easing="ease-in-out">
-		"Alone, we can do so little; together, we can do so much." — Helen Keller
-	</p>
-	<p class="text-xl text-center px-8 my-4 mb-8 leading-relaxed max-w-5xl">
-		We are always looking to expand our network of agencies and are open to working with new agencies. If you are
-		interested in working with us, please register your agency by clicking the button below.
-	</p>
-	<div class="w-full px-8 flex items-center justify-center">
-		<a href="{% url "account_signup" %}" class="w-full max-w-md"><button class="btn btn-accent w-full max-w-md">Register Your Agency</button></a>
-	</div>
-</div>
+    <div class="flex w-full flex-col items-center justify-center my-12 py-12">
+        <h2 class="text-3xl font-bold text-center mb-4">Join Us</h2>
+        <p
+            class="text-xl text-center px-8 italic leading-relaxed max-w-5xl"
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out">
+            "Alone, we can do so little; together, we can do so much." — Helen Keller
+        </p>
+        <p class="text-xl text-center px-8 my-4 mb-8 leading-relaxed max-w-5xl">
+            We are always looking to expand our network of agencies and are open to working with new agencies. If you are
+            interested in working with us, please register your agency by clicking the button below.
+        </p>
+        <div class="w-full px-8 flex items-center justify-center">
+            <a href="{% url "account_signup" %}" class="w-full max-w-md"><button class="btn btn-accent w-full max-w-md">Register Your Agency</button></a>
+        </div>
+    </div>
 
 {% comment %} Footer {% endcomment %}
-<footer class="bg-base-300 px-8 py-12">
-	<div class="grid grid-cols-1 text-center md:text-start md:grid-cols-4 gap-8">
-		<h3 class="text-2xl font-bold whitespace-nowrap row-span-3 my-auto md:my-0 md:row-span-1">Resque Radar</h3>
-		<ul
-			class="flex flex-col justify-start items-center md:items-start text-gray-500 text-sm space-y-2 whitespace-nowrap">
-			<li>
-				<a class="hover:underline" href="{% url 'about' %}">About Us</a>
-			</li>
-			<li>
-				<a
-					href="https://github.com/RescueRadar"
-					class="hover:underline"
-					target="_blank"
-					rel="noopener noreferrer"
-					>The Team</a
-				>
-			</li>
-			<li>
-				<a class="hover:underline" href="{% url 'contact' %}">Need Help?</a>
-			</li>
-		</ul>
-		<ul
-			class="flex flex-col justify-start items-center md:items-start text-gray-500 text-sm space-y-2 whitespace-nowrap">
-			<li>
-				<i class="fa-brands fa-facebook"></i>
-				<a href="#" class="hover:underline">Facebook</a>
-			</li>
-			<li>
-				<i class="fa-brands fa-x-twitter"></i>
-				<a href="#" class="hover:underline">Twitter</a>
-			</li>
-			<li>
-				<i class="fa-brands fa-instagram"></i>
-				<a href="#" class="hover:underline">Instagram</a>
-			</li>
-			<li>
-				<i class="fa-brands fa-linkedin"></i>
-				<a href="#" class="hover:underline">LinkedIn</a>
-			</li>
-		</ul>
-		<ul
-			class="flex flex-col justify-start items-center md:items-start text-gray-500 text-sm space-y-2 whitespace-nowrap">
-			<li>
-				<a href="#" class="hover:underline">Privacy Policy</a>
-			</li>
-			<li>
-				<a href="#" class="hover:underline">Terms of Service</a>
-			</li>
-		</ul>
-	</div>
-	<p class="md:text-start text-center text-gray-500 text-xs mt-8">&copy; 2023 Resque Radar. All rights reserved.</p>
-</footer>
+    <footer class="bg-base-300 px-8 py-12">
+        <div class="grid grid-cols-1 text-center md:text-start md:grid-cols-4 gap-8">
+            <h3 class="text-2xl font-bold whitespace-nowrap row-span-3 my-auto md:my-0 md:row-span-1">Resque Radar</h3>
+            <ul
+                class="flex flex-col justify-start items-center md:items-start text-gray-500 text-sm space-y-2 whitespace-nowrap">
+                <li>
+                    <a class="hover:underline" href="{% url 'about' %}">About Us</a>
+                </li>
+                <li>
+                    <a
+                        href="https://github.com/RescueRadar"
+                        class="hover:underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >The Team</a
+                        >
+                    </li>
+                    <li>
+                        <a class="hover:underline" href="{% url 'contact' %}">Need Help?</a>
+                    </li>
+                </ul>
+                <ul
+                    class="flex flex-col justify-start items-center md:items-start text-gray-500 text-sm space-y-2 whitespace-nowrap">
+                    <li>
+                        <i class="fa-brands fa-facebook"></i>
+                        <a href="#" class="hover:underline">Facebook</a>
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <a href="#" class="hover:underline">Twitter</a>
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-instagram"></i>
+                        <a href="#" class="hover:underline">Instagram</a>
+                    </li>
+                    <li>
+                        <i class="fa-brands fa-linkedin"></i>
+                        <a href="#" class="hover:underline">LinkedIn</a>
+                    </li>
+                </ul>
+                <ul
+                    class="flex flex-col justify-start items-center md:items-start text-gray-500 text-sm space-y-2 whitespace-nowrap">
+                    <li>
+                        <a href="#" class="hover:underline">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#" class="hover:underline">Terms of Service</a>
+                    </li>
+                </ul>
+            </div>
+            <p class="md:text-start text-center text-gray-500 text-xs mt-8">&copy; 2023 Resque Radar. All rights reserved.</p>
+        </footer>
 
 {% endblock main %}

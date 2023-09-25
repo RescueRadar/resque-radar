@@ -1,49 +1,49 @@
 {% extends 'base.html' %} {% block main %} {% load static %}
 
-<div class="min-h-[90dvh] md:flex-row flex-col flex items-center justify-around mx-8">
+    <div class="min-h-[90dvh] md:flex-row flex-col flex items-center justify-around mx-8">
 
-    <img src="{% static 'img/emergency.png' %}" alt="Emergency Image" class="md:w-1/2 my-12 px-20 max-w-lg md:px-0" />
-    <div class="text-center md:mx-8 max-w-xl my-12">
-        <h1
-        class="text-2xl font-bold mb-2"
-        >
-            In an emergency??
-        </h1>
-        <p
-        class="leading-relaxed mb-4"
-        >
-            Fill out the form below to notify the nearby Rescue Teams. They will be there to help you as soon as possible.
-        </p>
-        <p
-        class="text-error mb-8 text-sm font-bold"
-        >
-            * Only fill this form in case of an emergency *
-        </p>
-        <form>
-            <input type="text" class="input input-bordered w-full" placeholder="Name of the Respondent" />
-            <input type="text" class="input input-bordered w-full mt-4" placeholder="Phone Number (+91)" />
-            <div class="w-full flex">
-                <select class="select select-bordered w-1/2 mt-4 mr-4">
-                    <option selected disabled>Type of emergency</option>
-                    <option>Medical</option>
-                    <option>Fire</option>
-                    <option>Earthquake</option>
-                    <option>Flood</option>
-                    <option>Other</option>
-                </select>
-                <select class="select select-bordered w-1/2 mt-4">
-                    <option selected disabled>Apx. number of people affected</option>
-                    <option>1-5</option>
-                    <option>5-10</option>
-                    <option>10-20</option>
-                    <option>20-50</option>
-                    <option>50+</option>
-                </select>
+        <img src="{% static 'img/emergency.png' %}" alt="Emergency Image" class="md:w-1/2 my-12 px-20 max-w-lg md:px-0" />
+        <div class="text-center md:mx-8 max-w-xl my-12">
+            <h1
+                class="text-2xl font-bold mb-2"
+            >
+                In an emergency??
+            </h1>
+            <p
+                class="leading-relaxed mb-4"
+            >
+                Fill out the form below to notify the nearby Rescue Teams. They will be there to help you as soon as possible.
+            </p>
+            <p
+                class="text-error mb-8 text-sm font-bold"
+            >
+                * Only fill this form in case of an emergency *
+            </p>
+            <form>
+                <input type="text" class="input input-bordered w-full" placeholder="Name of the Respondent" />
+                <input type="text" class="input input-bordered w-full mt-4" placeholder="Phone Number (+91)" />
+                <div class="w-full flex">
+                    <select class="select select-bordered w-1/2 mt-4 mr-4">
+                        <option selected disabled>Type of emergency</option>
+                        <option>Medical</option>
+                        <option>Fire</option>
+                        <option>Earthquake</option>
+                        <option>Flood</option>
+                        <option>Other</option>
+                    </select>
+                    <select class="select select-bordered w-1/2 mt-4">
+                        <option selected disabled>Apx. number of people affected</option>
+                        <option>1-5</option>
+                        <option>5-10</option>
+                        <option>10-20</option>
+                        <option>20-50</option>
+                        <option>50+</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-error w-full mt-8">Notify</button>
             </div>
-        
-            <button class="btn btn-error w-full mt-8">Notify</button>
-    </div>
 
-</div>
+        </div>
 
 {% endblock %}

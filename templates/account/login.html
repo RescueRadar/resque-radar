@@ -4,59 +4,59 @@
 {% load account socialaccount %}
 
 {% block head_title %}
-Sign in
+  Sign in
 {% endblock %}
 
 {% block whitebox %}
-<h1 class="mb-5 text-3xl text-center font-bold">Sign in</h1>
-<form method="POST" action="{% url 'account_login' %}" class="flex flex-col items-center w-full">
-  {% csrf_token %}
+  <h1 class="mb-5 text-3xl text-center font-bold">Sign in</h1>
+  <form method="POST" action="{% url 'account_login' %}" class="flex flex-col items-center w-full">
+    {% csrf_token %}
 
-  {% include "account/_non_field_errors.html" %}
+    {% include "account/_non_field_errors.html" %}
 
-  {% for field in form.visible_fields %}
-    {% if field.name != "remember" %}
-    <div class="mb-4 w-full">
-    {{ field|add_label_class:"font-semibold text-xs" }}
-    {% if field.errors %}
-    {% render_field field class="input input-bordered input-error block w-full" %}
-    {% else %}
-    {% render_field field class="input input-bordered block w-full" %}
-    {% endif %}
-    {% for error in field.errors %}
-    <span class="flex items-center max-w-xs mt-1 ml-1 text-xs font-medium tracking-wide text-red-500">
-      {{ error }}
-    </span>
+    {% for field in form.visible_fields %}
+      {% if field.name != "remember" %}
+        <div class="mb-4 w-full">
+          {{ field|add_label_class:"font-semibold text-xs" }}
+          {% if field.errors %}
+            {% render_field field class="input input-bordered input-error block w-full" %}
+          {% else %}
+            {% render_field field class="input input-bordered block w-full" %}
+          {% endif %}
+          {% for error in field.errors %}
+            <span class="flex items-center max-w-xs mt-1 ml-1 text-xs font-medium tracking-wide text-red-500">
+              {{ error }}
+            </span>
+          {% endfor %}
+        </div>
+      {% endif %}
     {% endfor %}
+
+
+    {% include "account/_button.html" with text="Login" %}
+
+    <div class="flex justify-center mt-6 text-xs">
+      <a class="text-teal-400 hover:text-teal-500" href="{% url 'account_reset_password' %}">Forgot Password</a>
+      <span class="mx-2 text-gray-300">/</span>
+      <a class="text-teal-400 hover:text-teal-500" href="{% url 'account_signup' %}">Sign Up</a>
     </div>
+
+    {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
     {% endif %}
-  {% endfor %}
+  </form>
+  {% get_providers as socialaccount_providers %}
+  {% if socialaccount_providers %}
+    <div class="flex items-center self-stretch justify-between pt-3 mt-3">
+      <hr class="w-full">
+      <span class="p-2 mb-1 text-white">OR</span>
+      <hr class="w-full">
+    </div>
 
+    <p class="text-xs text-center text-white">Sign in with a third party</p>
 
-  {% include "account/_button.html" with text="Login" %}
-
-  <div class="flex justify-center mt-6 text-xs">
-    <a class="text-teal-400 hover:text-teal-500" href="{% url 'account_reset_password' %}">Forgot Password</a>
-    <span class="mx-2 text-gray-300">/</span>
-    <a class="text-teal-400 hover:text-teal-500" href="{% url 'account_signup' %}">Sign Up</a>
-  </div>
-
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
   {% endif %}
-</form>
-{% get_providers as socialaccount_providers %}
-{% if socialaccount_providers %}
-<div class="flex items-center self-stretch justify-between pt-3 mt-3">
-  <hr class="w-full">
-  <span class="p-2 mb-1 text-white">OR</span>
-  <hr class="w-full">
-</div>
 
-<p class="text-xs text-center text-white">Sign in with a third party</p>
-
-{% include "socialaccount/snippets/provider_list.html" with process="login" %}
-{% endif %}
-
-{% include "socialaccount/snippets/login_extra.html" %}
+  {% include "socialaccount/snippets/login_extra.html" %}
 {% endblock %}

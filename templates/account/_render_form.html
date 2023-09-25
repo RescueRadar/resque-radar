@@ -3,23 +3,23 @@
 {% csrf_token %}
 
 {% if redirect_field_value %}
-<input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
 {% endif %}
 
 {% include "account/_non_field_errors.html" %}
 
 {% for field in form.visible_fields %}
   <div class="mb-4">
-  {{ field|add_label_class:"font-semibold text-xs" }}
-  {% if field.errors %}
-  {% render_field field class="input input-bordered input-error block w-full" %}
-  {% else %}
-  {% render_field field class="input input-bordered block w-full" %}
-  {% endif %}
-  {% for error in field.errors %}
-  <span class="flex items-center max-w-xs mt-1 ml-1 text-xs font-medium tracking-wide text-red-500">
-    {{ error }}
-  </span>
-  {% endfor %}
+    {{ field|add_label_class:"font-semibold text-xs" }}
+    {% if field.errors %}
+      {% render_field field class="input input-bordered input-error block w-full" %}
+    {% else %}
+      {% render_field field class="input input-bordered block w-full" %}
+    {% endif %}
+    {% for error in field.errors %}
+      <span class="flex items-center max-w-xs mt-1 ml-1 text-xs font-medium tracking-wide text-red-500">
+        {{ error }}
+      </span>
+    {% endfor %}
   </div>
 {% endfor %}
