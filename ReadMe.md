@@ -32,9 +32,8 @@ This project was made for the [Smart India Hackathon 2023](https://www.sih.gov.i
 - [Rachit Khurana](https://github.com/notnotrachit) - Django Developer
 - [Chirag Aggarwal](https://github.com/ChiragAgg5k) - Frontend Developer
 - [Aviral](https://github.com/PlasmicZ) - UI Designer
-- [Tanmay](https://github.com/JagritiGautam793) - Research and Documentation
-- [Jagriti Gautum](https://github.com/TanmayChachra) - AI and ML
-
+- [Tanmay Chachra](https://github.com/TanmayChachra) - Research and Documentation
+- [Jagriti Gautam](https://github.com/JagritiGautam793) - AI and ML
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](/LICENSE.md) file for details.
