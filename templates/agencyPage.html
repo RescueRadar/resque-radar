@@ -1,165 +1,156 @@
 {% extends 'base.html' %} {% block main %} {% load static %}
 
-</style>
-<body class="relative bg-gray-900 overflow-hidden max-h-screen text-white">
-  
-    <aside class="fixed inset-y-0 left-0 bg-gray-800 shadow-md max-h-screen w-60">
-        <div class="flex flex-col justify-between h-full">
-        <div class="flex-grow">
-          <div class="px-4 py-6 text-center border-b pt-32">
-            <h1 class="text-xl font-bold leading-none"><span class="text-green-500">Agency</span> Profile</h1>
-          </div>
-          <div class="p-4">
-            <ul class="space-y-1">
-              <li>
-                <a href="javascript:void(0)" class="flex items-center bg-yellow-200 rounded-xl font-bold text-sm text-yellow-900 py-3 px-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="text-lg mr-4" viewBox="0 0 16 16">
-                    <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/>
-                  </svg>Dashboard
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)" class="flex bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" class="text-lg mr-4" viewBox="0 0 640 512"><path d="M272.2 64.6l-51.1 51.1c-15.3 4.2-29.5 11.9-41.5 22.5L153 161.9C142.8 171 129.5 176 115.8 176H96V304c20.4 .6 39.8 8.9 54.3 23.4l35.6 35.6 7 7 0 0L219.9 397c6.2 6.2 16.4 6.2 22.6 0c1.7-1.7 3-3.7 3.7-5.8c2.8-7.7 9.3-13.5 17.3-15.3s16.4 .6 22.2 6.5L296.5 393c11.6 11.6 30.4 11.6 41.9 0c5.4-5.4 8.3-12.3 8.6-19.4c.4-8.8 5.6-16.6 13.6-20.4s17.3-3 24.4 2.1c9.4 6.7 22.5 5.8 30.9-2.6c9.4-9.4 9.4-24.6 0-33.9L340.1 243l-35.8 33c-27.3 25.2-69.2 25.6-97 .9c-31.7-28.2-32.4-77.4-1.6-106.5l70.1-66.2C303.2 78.4 339.4 64 377.1 64c36.1 0 71 13.3 97.9 37.2L505.1 128H544h40 40c8.8 0 16 7.2 16 16V352c0 17.7-14.3 32-32 32H576c-11.8 0-22.2-6.4-27.7-16H463.4c-3.4 6.7-7.9 13.1-13.5 18.7c-17.1 17.1-40.8 23.8-63 20.1c-3.6 7.3-8.5 14.1-14.6 20.2c-27.3 27.3-70 30-100.4 8.1c-25.1 20.8-62.5 19.5-86-4.1L159 404l-7-7-35.6-35.6c-5.5-5.5-12.7-8.7-20.4-9.3C96 369.7 81.6 384 64 384H32c-17.7 0-32-14.3-32-32V144c0-8.8 7.2-16 16-16H56 96h19.8c2 0 3.9-.7 5.3-2l26.5-23.6C175.5 77.7 211.4 64 248.7 64H259c4.4 0 8.9 .2 13.2 .6zM544 320V176H496c-5.9 0-11.6-2.2-15.9-6.1l-36.9-32.8c-18.2-16.2-41.7-25.1-66.1-25.1c-25.4 0-49.8 9.7-68.3 27.1l-70.1 66.2c-10.3 9.8-10.1 26.3 .5 35.7c9.3 8.3 23.4 8.1 32.5-.3l71.9-66.4c9.7-9 24.9-8.4 33.9 1.4s8.4 24.9-1.4 33.9l-.8 .8 74.4 74.4c10 10 16.5 22.3 19.4 35.1H544zM64 336a16 16 0 1 0 -32 0 16 16 0 1 0 32 0zm528 16a16 16 0 1 0 0-32 16 16 0 1 0 0 32z"/></svg>Collaborate
-                </a>
-              </li>
-              <li>
-                <a href="javascript:void(0)" class="flex bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="text-lg mr-4" viewBox="0 0 576 512"><path d="M528 160V416c0 8.8-7.2 16-16 16H320c0-44.2-35.8-80-80-80H176c-44.2 0-80 35.8-80 80H64c-8.8 0-16-7.2-16-16V160H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM272 256a64 64 0 1 0 -128 0 64 64 0 1 0 128 0zm104-48c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24H376zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24H376z"/></svg>Contact Details
-                </a>
-              </li>
-                <a href="javascript:void(0)" class="flex bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="text-lg mr-4" viewBox="0 0 448 512">
-                        <path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg>Notification
-                </a>
-              </li>
+  </style>
 
-            </ul>
-          </div>
+  <aside class="fixed inset-y-0 left-0 bg-base-300 shadow-md max-h-screen w-60">
+    <div class="flex flex-col justify-between h-full">
+      <div class="flex-grow">
+        <div class="mt-24 py-6 border-b-2 border-base-100 text-center">
+          <h1 class="text-xl font-bold leading-none"><span class="text-accent">Agency</span> Profile</h1>
         </div>
         <div class="p-4">
-          <button type="button" class="inline-flex items-center justify-center h-9 px-4 rounded-xl bg-gray-900 text-gray-300 hover:text-white text-sm font-semibold transition">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="" viewBox="0 0 16 16">
-              <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1h8zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-            </svg>
-          </button> <span class="font-bold text-sm ml-2">Report</span>
+          <ul class="space-y-2">
+            <li>
+              <a href="javascript:void(0)" class="flex items-center bg-yellow-200 rounded-xl font-bold text-sm text-yellow-900 py-3 px-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="text-lg mr-4" viewBox="0 0 16 16">
+                  <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-3.5-7h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/>
+                </svg>Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" class="flex bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" class="text-lg mr-4" viewBox="0 0 640 512"><path d="M272.2 64.6l-51.1 51.1c-15.3 4.2-29.5 11.9-41.5 22.5L153 161.9C142.8 171 129.5 176 115.8 176H96V304c20.4 .6 39.8 8.9 54.3 23.4l35.6 35.6 7 7 0 0L219.9 397c6.2 6.2 16.4 6.2 22.6 0c1.7-1.7 3-3.7 3.7-5.8c2.8-7.7 9.3-13.5 17.3-15.3s16.4 .6 22.2 6.5L296.5 393c11.6 11.6 30.4 11.6 41.9 0c5.4-5.4 8.3-12.3 8.6-19.4c.4-8.8 5.6-16.6 13.6-20.4s17.3-3 24.4 2.1c9.4 6.7 22.5 5.8 30.9-2.6c9.4-9.4 9.4-24.6 0-33.9L340.1 243l-35.8 33c-27.3 25.2-69.2 25.6-97 .9c-31.7-28.2-32.4-77.4-1.6-106.5l70.1-66.2C303.2 78.4 339.4 64 377.1 64c36.1 0 71 13.3 97.9 37.2L505.1 128H544h40 40c8.8 0 16 7.2 16 16V352c0 17.7-14.3 32-32 32H576c-11.8 0-22.2-6.4-27.7-16H463.4c-3.4 6.7-7.9 13.1-13.5 18.7c-17.1 17.1-40.8 23.8-63 20.1c-3.6 7.3-8.5 14.1-14.6 20.2c-27.3 27.3-70 30-100.4 8.1c-25.1 20.8-62.5 19.5-86-4.1L159 404l-7-7-35.6-35.6c-5.5-5.5-12.7-8.7-20.4-9.3C96 369.7 81.6 384 64 384H32c-17.7 0-32-14.3-32-32V144c0-8.8 7.2-16 16-16H56 96h19.8c2 0 3.9-.7 5.3-2l26.5-23.6C175.5 77.7 211.4 64 248.7 64H259c4.4 0 8.9 .2 13.2 .6zM544 320V176H496c-5.9 0-11.6-2.2-15.9-6.1l-36.9-32.8c-18.2-16.2-41.7-25.1-66.1-25.1c-25.4 0-49.8 9.7-68.3 27.1l-70.1 66.2c-10.3 9.8-10.1 26.3 .5 35.7c9.3 8.3 23.4 8.1 32.5-.3l71.9-66.4c9.7-9 24.9-8.4 33.9 1.4s8.4 24.9-1.4 33.9l-.8 .8 74.4 74.4c10 10 16.5 22.3 19.4 35.1H544zM64 336a16 16 0 1 0 -32 0 16 16 0 1 0 32 0zm528 16a16 16 0 1 0 0-32 16 16 0 1 0 0 32z"/></svg>Collaborate
+              </a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" class="flex bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="text-lg mr-4" viewBox="0 0 576 512"><path d="M528 160V416c0 8.8-7.2 16-16 16H320c0-44.2-35.8-80-80-80H176c-44.2 0-80 35.8-80 80H64c-8.8 0-16-7.2-16-16V160H528zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM272 256a64 64 0 1 0 -128 0 64 64 0 1 0 128 0zm104-48c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24H376zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24h80c13.3 0 24-10.7 24-24s-10.7-24-24-24H376z"/></svg>Contact Details
+              </a>
+            </li>
+            <a href="javascript:void(0)" class="flex bg-white hover:bg-yellow-50 rounded-xl font-bold text-sm text-gray-900 py-3 px-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" class="text-lg mr-4" viewBox="0 0 448 512">
+                <path d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"/></svg>Notification
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+    <div class="p-4 flex items-center">
+      <button type="button" class="btn btn-ghost text-xl">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="" viewBox="0 0 16 16">
+          <path d="M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1h8zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+        </svg>
+      </button> <span class="font-bold text-sm ml-2 btn btn-base-200">Report</span>
+    </div>
+  </div>
+  </aside>
+
+  <main class="ml-60 min-h-[80dvh] overflow-x-auto p-8">
+    <h1 class="text-3xl font-bold mb-10">National Disaster Response Force (NDRF)</h1>
+    <div class="flex items-center justify-between">
+      <div class="flex items-stretch">
+        <div class="text-xs">Agencies<br>Collaborated</div>
+        <div class="h-100 border-l mx-4"></div>
+        <div class="flex flex-nowrap -space-x-3">
+          <div class="h-9 w-9">
+            <img class="object-cover w-full h-full rounded-full" src="https://upload.wikimedia.org/wikipedia/commons/6/60/Indian_Coast_Guard_Logo.svg">
+          </div>
+          <div class="h-9 w-9">
+            <img class="object-cover w-full h-full rounded-full" src="https://w7.pngwing.com/pngs/469/395/png-transparent-s-w-r-t-t-swift-water-rescue-team-toscana-soccorso-fluviale-e-alluvionale-organization-civil-defense-ocean-rescue-emblem-logo-first-aid-supplies.png">
+          </div>
+          <div class="h-9 w-9">
+            <img class="object-cover w-full h-full rounded-full" src="https://st4.depositphotos.com/2197868/20120/v/450/depositphotos_201200686-stock-illustration-volunteer-rescue-squad-design-illustration.jpg">
+          </div>
+          <div class="h-9 w-9">
+            <img class="object-cover w-full h-full rounded-full" src="https://dcassetcdn.com/design_img/3697333/148590/22070728/bv00xwxydz71rxv3mwkkbvxqfw_image.png">
+          </div>
         </div>
       </div>
-    </aside>
-  
-    <main class="ml-60 pt-6 max-h-screen overflow-auto">
-      <div class="px-6 py-8 pt-4">
-        <div class="max-w-4xl mx-auto">
-          <div class="bg-gradient-to-r from-indigo-900 to-purple-900 rounded-3xl p-8 mb-5">
-            <h1 class="text-3xl font-bold mb-10">National Disaster Response Force (NDRF)</h1>
-            <div class="flex items-center justify-between">
-              <div class="flex items-stretch">
-                <div class="text-gray-100 text-xs">Agencies<br>Collaborated</div>
-                <div class="h-100 border-l mx-4"></div>
-                <div class="flex flex-nowrap -space-x-3">
-                  <div class="h-9 w-9">
-                    <img class="object-cover w-full h-full rounded-full" src="https://upload.wikimedia.org/wikipedia/commons/6/60/Indian_Coast_Guard_Logo.svg">
-                  </div>
-                  <div class="h-9 w-9">
-                    <img class="object-cover w-full h-full rounded-full" src="https://w7.pngwing.com/pngs/469/395/png-transparent-s-w-r-t-t-swift-water-rescue-team-toscana-soccorso-fluviale-e-alluvionale-organization-civil-defense-ocean-rescue-emblem-logo-first-aid-supplies.png">
-                  </div>
-                  <div class="h-9 w-9">
-                    <img class="object-cover w-full h-full rounded-full" src="https://st4.depositphotos.com/2197868/20120/v/450/depositphotos_201200686-stock-illustration-volunteer-rescue-squad-design-illustration.jpg">
-                  </div>
-                  <div class="h-9 w-9">
-                    <img class="object-cover w-full h-full rounded-full" src="https://dcassetcdn.com/design_img/3697333/148590/22070728/bv00xwxydz71rxv3mwkkbvxqfw_image.png">
-                  </div>
-                </div>
-              </div>
-              <div class="flex items-center gap-x-2">
-                <button type="button" class="inline-flex items-center justify-center h-9 px-3 rounded-xl border hover:border-gray-400 text-gray-800 hover:text-gray-900 transition">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-chat-fill" viewBox="0 0 16 16">
-                    <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
-                  </svg>
-                </button>
-                <button type="button" class="inline-flex items-center justify-center h-9 px-5 rounded-xl bg-indigo-900 text-white hover:text-yellow-400 text-sm font-semibold transition">
-                  Follow
+      <div class="flex items-center gap-x-2">
+        <button type="button" class="btn btn-ghost border-base-200">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-chat-fill" viewBox="0 0 16 16">
+            <path d="M8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6-.097 1.016-.417 2.13-.771 2.966-.079.186.074.394.273.362 2.256-.37 3.597-.938 4.18-1.234A9.06 9.06 0 0 0 8 15z"/>
+          </svg>
+        </button>
+        <button type="button" class="btn btn-accent">
+          Follow
+        </button>
+      </div>
+    </div>
+
+    <hr class="my-10">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20">
+      <div>
+        <h2 class="text-2xl font-bold mb-4 text-warning/80">Agency Statistics</h2>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="col-span-2">
+            <div class="p-4 bg-green-100 rounded-xl">
+              <div class="font-bold text-xl text-gray-800 leading-none">Rescue Operation Status : <br>Ongoing</div>
+              <div class="mt-5">
+                <button type="button" class="inline-flex items-center justify-center py-2 px-3 rounded-xl bg-white text-gray-800 hover:text-blue-500 text-sm font-semibold transition">
+                  View Live Location
                 </button>
               </div>
             </div>
-  
-            <hr class="my-10">
-  
-            <div class="grid grid-cols-2 gap-x-20">
-              <div>
-                <h2 class="text-2xl font-bold mb-4 text-yellow-200">Agency Statistics</h2>
-  
-                <div class="grid grid-cols-2 gap-4">
-                  <div class="col-span-2">
-                    <div class="p-4 bg-green-100 rounded-xl">
-                      <div class="font-bold text-xl text-gray-800 leading-none">Rescue Operation Status : <br>Ongoing</div>
-                      <div class="mt-5">
-                        <button type="button" class="inline-flex items-center justify-center py-2 px-3 rounded-xl bg-white text-gray-800 hover:text-blue-500 text-sm font-semibold transition">
-                          View Live Location
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="p-4 bg-yellow-100 rounded-xl text-gray-800">
-                    <div class="font-bold text-2xl leading-none">76</div>
-                    <div class="mt-2">Rescue Operations</div>
-                  </div>
-                  <div class="p-4 bg-yellow-100 rounded-xl text-gray-800">
-                    <div class="font-bold text-2xl leading-none">383</div>
-                    <div class="mt-2">People Rescued</div>
-                  </div>
-                  <div class="col-span-2">
-                    <div class="p-4 bg-purple-100 rounded-xl text-gray-800">
-                      <div class="font-bold text-xl leading-none">Medical Assistance Delivered</div>
-                      <div class="mt-2">27</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h2 class="text-2xl font-bold mb-4 text-green-200">Last Reported Acitivty</h2>
-  
-                <div class="space-y-4">
-                  <div class="p-4 bg-white border rounded-xl text-gray-800 space-y-2">
-                    <div class="flex justify-between">
-                      <div class="text-gray-600 text-xs">Sector 18, Noida </div>
-                      <div class="text-red-600 text-xs">2Hr Ago</div>
-                    </div>
-                    <a href="javascript:void(0)" class="font-bold hover:text-yellow-800 hover:underline">Fire Breakout</a>
-                    <div class="text-sm text-gray-600">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="text-gray-800 inline align-middle mr-1" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                      </svg>Team Arrived in Area 32
-                    </div>
-                  </div>
-                  <div class="p-4 bg-white border rounded-xl text-gray-800 space-y-2">
-                    <div class="flex justify-between">
-                      <div class="text-gray-600 text-xs">Rishikesh</div>
-                      <div class="text-red-600 text-xs">9 Days Ago</div>
-                    </div>
-                    <a href="javascript:void(0)" class="font-bold hover:text-yellow-800 hover:underline">Flood Region 13</a>
-                    <div class="text-sm text-gray-600">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="text-gray-800 inline align-middle mr-1" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-                      </svg>RO Over , 38 people Rescued
-                    </div>
-                  </div>
-                  <div class="p-4 bg-white border rounded-xl text-gray-800 space-y-2">
-                    <div class="flex justify-between">
-                      <div class="text-gray-600 text-xs">Puri, Odisha</div>
-                      <div class="text-red-600 text-xs">1 month Ago</div>
-                    </div>
-                    <a href="javascript:void(0)" class="font-bold hover:text-yellow-800 hover:underline">Cyclone Affected Region</a>
-                    <div class="text-sm text-gray-600">
-                        Medical Assistance Delivered , ODRF Team in Region 3
-                    </div>
-                  </div>
-                </div>
-              </div>
+          </div>
+          <div class="p-4 bg-yellow-100 rounded-xl text-gray-800">
+            <div class="font-bold text-2xl leading-none">76</div>
+            <div class="mt-2">Rescue Operations</div>
+          </div>
+          <div class="p-4 bg-yellow-100 rounded-xl text-gray-800">
+            <div class="font-bold text-2xl leading-none">383</div>
+            <div class="mt-2">People Rescued</div>
+          </div>
+          <div class="col-span-2">
+            <div class="p-4 bg-purple-100 rounded-xl text-gray-800">
+              <div class="font-bold text-xl leading-none">Medical Assistance Delivered</div>
+              <div class="mt-2">27</div>
             </div>
           </div>
         </div>
       </div>
-    </main>
-  </body>
+      <div>
+        <h2 class="text-2xl font-bold mb-4 text-success/80">Last Reported Acitivty</h2>
+        <div class="space-y-4">
+          <div class="p-4 bg-white border rounded-xl text-gray-800 space-y-2">
+            <div class="flex justify-between">
+              <div class="text-gray-600 text-xs">Sector 18, Noida </div>
+              <div class="text-red-600 text-xs">2Hr Ago</div>
+            </div>
+            <a href="javascript:void(0)" class="font-bold hover:text-yellow-800 hover:underline">Fire Breakout</a>
+            <div class="text-sm text-gray-600">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="text-gray-800 inline align-middle mr-1" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+              </svg>Team Arrived in Area 32
+            </div>
+          </div>
+          <div class="p-4 bg-white border rounded-xl text-gray-800 space-y-2">
+            <div class="flex justify-between">
+              <div class="text-gray-600 text-xs">Rishikesh</div>
+              <div class="text-red-600 text-xs">9 Days Ago</div>
+            </div>
+            <a href="javascript:void(0)" class="font-bold hover:text-yellow-800 hover:underline">Flood Region 13</a>
+            <div class="text-sm text-gray-600">
+              <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="text-gray-800 inline align-middle mr-1" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+              </svg>RO Over , 38 people Rescued
+            </div>
+          </div>
+          <div class="p-4 bg-white border rounded-xl text-gray-800 space-y-2">
+            <div class="flex justify-between">
+              <div class="text-gray-600 text-xs">Puri, Odisha</div>
+              <div class="text-red-600 text-xs">1 month Ago</div>
+            </div>
+            <a href="javascript:void(0)" class="font-bold hover:text-yellow-800 hover:underline">Cyclone Affected Region</a>
+            <div class="text-sm text-gray-600">
+              Medical Assistance Delivered , ODRF Team in Region 3
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
 {% endblock %}

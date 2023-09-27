@@ -106,6 +106,61 @@
                 </div>
             </div>
         </div>
+
+        <button
+            class="btn btn-accent mt-12 max-w-sm"
+            onclick="create_room.showModal()"
+        >
+            Create New Room
+        </button>
     </div>
+
+    <dialog id="create_room" class="modal">
+        <div class="modal-box w-10/12 p-10 max-w-5xl">
+            <h3 class="font-bold text-lg">Create New Room</h3>
+            <p class="py-4">
+                Start a new rescue operation by creating a new room with other rescue teams.
+            </p>
+
+            <form>
+                <div class="space-y-4 mb-8">
+                    <div>
+                        <label for="name" class="label">
+                            <span class="label-text font-bold">Select Agency to Coordinate With</span>
+                        </label>
+                        <select class="select select-bordered w-full" name="manpower">
+                            <option value="DMAD">DMAD</option>
+                            <option value="NIDM">NIDM</option>
+                            <option value="NDRF">NDRF</option>
+                            <option value="CDRI">CDRI</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="name" class="label">
+                            <span class="label-text font-bold">Location of Operation</span>
+                        </label>
+                        <div class="w-full relative">
+                            <input type="text" placeholder="Enter Location" class="input input-bordered w-full" />
+                            <div class="text-xl btn btn-ghost absolute right-0">
+                                <i class="fa-solid fa-location-crosshairs"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-accent w-full"
+                >
+                    Create Room
+                </button>
+
+            </form>
+        </div>
+        <form method="dialog" class="modal-backdrop">
+            <button>close</button>
+        </form>
+    </dialog>
 
 {% endblock %}
