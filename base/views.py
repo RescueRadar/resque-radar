@@ -3,6 +3,12 @@ from agency.models import agency, non_approved_agency
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .decorators import agency_req
+from .forms import ContactForm
+from django.core.mail import send_mail
+import os
+from django.template.loader import render_to_string
+from django.core.mail import EmailMessage
+
 # Create your views here.
 def home(request):
     if request.user.is_authenticated:
@@ -14,7 +20,35 @@ def about(request):
     return render(request, 'about.html')
 
 def contact(request):
-    return render(request, 'contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            first_name = form.cleaned_data['first_name']
+            last_name = form.cleaned_data['last_name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+
+            EmailMessage(
+                'New contact form submission',
+                render_to_string('email/contact_form.html', {
+                    'first_name': first_name,
+                    'last_name': last_name,
+                    'email': email,
+                    'message': message
+                }),
+                os.environ.get('EMAIL_HOST_USER'),
+                [os.environ.get('EMAIL_HOST_USER')],
+                reply_to=[email]
+            ).send()
+
+            return redirect('home')
+        else:
+            print(form.errors)
+    
+    form = ContactForm()
+    return render(request, 'contact.html',{
+        'form': form
+    })
 
 def user_report(request):
     return render(request, 'user_report.html')
