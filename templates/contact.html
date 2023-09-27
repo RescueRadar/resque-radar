@@ -7,7 +7,8 @@
                 <p class="text-start mb-5">
                     We are always ready to help you. If you have any queries or suggestions, feel free to type them below.
                 </p>
-                <form class="flex flex-col items-center justify-between w-full">
+                <form class="flex flex-col items-center justify-between w-full" method="post" action=".">
+                    {% csrf_token %}
                     <div class="flex items-center justify-between mb-4 w-full">
                         <input
                             type="text"
