@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
-from agency.models import agency, non_approved_agency
+from django.shortcuts import render, redirect, get_object_or_404
+from agency.models import agency, non_approved_agency,Post
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .decorators import agency_req
-from .forms import ContactForm
+from .forms import ContactForm, PostForm
 from django.core.mail import send_mail
 import os
 from django.template.loader import render_to_string
@@ -128,3 +128,50 @@ def profile(request):
 
 def request_submitted(request, form_submitted):
     return render(request, 'request_submitted.html', {'form_submitted': form_submitted})
+
+
+@login_required
+def post_list(request):
+    posts = Post.objects.all()
+    return render(request, 'post_list.html', {'posts': posts})
+
+@login_required
+def post_detail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    return render(request, 'post_detail.html', {'post': post})
+
+@login_required
+def post_new(request):
+    if request.method == "POST":
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.agency = agency.objects.get(user=request.user)
+            post.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = PostForm()
+    return render(request, 'post_edit.html', {'form': form})
+
+@login_required
+def post_edit(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if post.agency.user != request.user:
+        return redirect('post_list')  # Redirect if trying to edit other agency's post
+    if request.method == "POST":
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = PostForm(instance=post)
+    return render(request, 'post_edit.html', {'form': form})
+
+@login_required
+def post_delete(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if post.agency.user != request.user:
+        return redirect('post_list')  # Redirect if trying to delete other agency's post
+    post.delete()
+    return redirect('post_list')

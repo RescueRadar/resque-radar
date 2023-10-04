@@ -144,3 +144,11 @@ class Message(models.Model):
 
     def __str__(self):
         return self.body[0:50]
+
+class Post(models.Model):
+    agency = models.ForeignKey(agency, on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    content = models.TextField()
+
+    def __str__(self):
+        return self.title

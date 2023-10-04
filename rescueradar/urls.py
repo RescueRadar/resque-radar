@@ -19,7 +19,12 @@ urlpatterns = [
     path('rooms/', base_views.rooms, name='rooms'),
     path('victims_portal/', base_views.victims_portal, name='victims_portal'),
     path('chatroom/',base_views.chatroom, name='chatroom'),
-    path('agencyPage/',base_views.agencyPage, name='agencyPage')
+    path('agencyPage/',base_views.agencyPage, name='agencyPage'),
+    path('feed/', base_views.post_list, name='post_list'),
+    path('post/<int:pk>/', base_views.post_detail, name='post_detail'),
+    path('post/new/', base_views.post_new, name='post_new'),
+    path('post/<int:pk>/edit/', base_views.post_edit, name='post_edit'),
+    path('post/<int:pk>/delete/', base_views.post_delete, name='post_delete'),
 
     # path('', include(router.urls)),
     # path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
