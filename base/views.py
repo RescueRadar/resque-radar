@@ -75,8 +75,8 @@ def agencyPage(request):
 @login_required
 @agency_req
 def dashboard(request):
-    all_agencies = agency.objects.all()
-    return render(request, 'dashboard.html', {'all_agencies': all_agencies})
+    posts = Post.objects.all()
+    return render(request, 'dashboard.html', {'posts': posts})
 
 @login_required
 def user_profile(request):
@@ -131,9 +131,9 @@ def request_submitted(request, form_submitted):
 
 
 @login_required
-def post_list(request):
-    posts = Post.objects.all()
-    return render(request, 'post_list.html', {'posts': posts})
+def all_agencies(request):
+    all_agencies = agency.objects.all()
+    return render(request, 'all_agencies.html', {'all_agencies': all_agencies})
 
 @login_required
 def post_detail(request, pk):
@@ -157,7 +157,7 @@ def post_new(request):
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if post.agency.user != request.user:
-        return redirect('post_list')  # Redirect if trying to edit other agency's post
+        return redirect('dashboard')  # Redirect if trying to edit other agency's post
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
@@ -172,6 +172,6 @@ def post_edit(request, pk):
 def post_delete(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if post.agency.user != request.user:
-        return redirect('post_list')  # Redirect if trying to delete other agency's post
+        return redirect('dashboard')  # Redirect if trying to delete other agency's post
     post.delete()
-    return redirect('post_list')
+    return redirect('dashboard')
