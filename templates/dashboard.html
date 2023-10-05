@@ -30,7 +30,7 @@
 
         <h1 class="my-6 font-bold text-2xl ml-6 flex justify-between items-center">
             <span>Real Time Updates</span>
-            <a href="{% url 'post_new' %}" class="btn btn-ghost bg-indigo-500 rounded-full mr-4">
+            <a href="{% url 'post_new' %}" class="btn btn-ghost rounded-full mr-4 btn-outline ">
                 Create New Post
             </a>
         </h1>
@@ -38,23 +38,32 @@
 
 
 
-        <div class="px-6 space-y-6 mb-12">
+        <div class="px-6 space-y-6 mb-12 ">
             {% for post in posts %}
-                <a href={% url 'post_detail' post.pk %} class="inline-block w-full">
-                    <div
-                        class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg hover:bg-base-base-300 hover:border-base-content/50 border-2 border-base-200 hover:cursor-pointer transition duration-300">
-                        <div class="flex items-center mb-4">
-                            <div>
-                                <h3 class="pr-4 mb-2 text-xl font-bold">{{ post.title }}</h3>
-                                <p
-                                    class="text-base-content/70 text-sm mr-4"
-                                >
-                                    {{ post.content }}
-                                </p>
+            <div class="border-2 border-base-200 hover:border-base-content/50">
+                <div class="bg-base-200">
+                    <a href={% url 'agencyPage' %}>
+                        <span class="text-2xl hover:text-green-500 font-bold">{{ post.agency.user }}</span>
+                </div>
+    
+                </a>
+                    <a href={% url 'post_detail' post.pk %} class="inline-block w-full">
+                        <div
+                            class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg hover:bg-base-base-300 hover:border-base-content/50 border-2 border-base-200 hover:cursor-pointer transition duration-300">
+                            <div class="flex items-center mb-4">
+                                <div>
+                                    <h3 class="pr-4 mb-2 text-xl font-bold">{{ post.title }}</h3>
+                                    <p
+                                        class="text-base-content/70 text-sm mr-4"
+                                    >
+                                        {{ post.content }}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
+            </div>
+
             {% endfor %}
         </div>
     </div>

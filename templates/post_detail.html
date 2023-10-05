@@ -29,8 +29,8 @@
         <div class="flex justify-between items-center mb-6">
             <h1
             class="text-2xl font-bold"
-        >{{ post.title }}</h1>
-            <a href="{% url 'dashboard' %}" class="btn bg-base-300">Back to feed</a>
+        >{{ post.title }} ({{ post.agency.user }})</h1>
+            <a href="{% url 'dashboard' %}" class="btn bg-base-300 btn-outline">Back to feed</a>
         </div>
         <p
             class="text-base mb-8"
