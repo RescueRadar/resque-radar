@@ -24,14 +24,19 @@
                 <a href="{% url 'victims_portal' %}" class="btn btn-ghost btn-sm"><i class="fa-solid fa-tower-broadcast"></i> Victims Portal </a>
             </li>
         </ul>
+ 
     </div>
     <div class="md:w-[calc(100%-13rem)] w-full min-h-[80dvh] md:ml-[13rem] flex flex-col">
 
-        <h1
-            class="my-6 font-bold text-2xl ml-6"
-        >
-            Real Time Updates
+        <h1 class="my-6 font-bold text-2xl ml-6 flex justify-between items-center">
+            <span>Real Time Updates</span>
+            <a href="{% url 'post_new' %}" class="btn btn-ghost bg-indigo-500 rounded-full mr-4">
+                Create New Post
+            </a>
         </h1>
+        </h1>
+
+
 
         <div class="px-6 space-y-6 mb-12">
             {% for post in posts %}

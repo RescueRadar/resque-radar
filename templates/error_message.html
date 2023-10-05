@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block main %} {% load static %}
+
+<div class="flex justify-center items-center h-screen flex-col">
+    <div class="mockup-window border bg-base-300">
+        <div class="flex justify-center px-4 py-16 bg-base-200">
+            <div class="alert alert-error flex justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span>{{ error_message }}</span>
+            </div>
+        </div>
+    </div>
+    <span class="mt-6">
+        <a href="{% url 'dashboard' %}" class="btn btn-ghost bg-indigo-500 rounded-full mr-4">
+            Back to Dashboard
+        </a>
+    </span>
+</div>
+
+
+
+
+{% endblock %}

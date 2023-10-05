@@ -54,6 +54,9 @@ def contact(request):
 def user_report(request):
     return render(request, 'user_report.html')
 
+def error_message(request, error_message):
+    return render(request, 'error_message.html', {'error_message': error_message})
+
 @login_required
 @agency_req
 def victims_portal(request):
@@ -142,6 +145,7 @@ def post_detail(request, pk):
     return render(request, 'post_detail.html', {'post': post})
 
 @login_required
+@agency_req
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
@@ -155,10 +159,11 @@ def post_new(request):
     return render(request, 'post_edit.html', {'form': form})
     
 @login_required
+@agency_req
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if post.agency.user != request.user:
-        return HttpResponse('You are not allowed to edit other agency posts!')  
+        return error_message(request, 'You are not allowed to edit other agency posts!')  
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
@@ -170,9 +175,10 @@ def post_edit(request, pk):
     return render(request, 'post_edit.html', {'form': form})
 
 @login_required
+@agency_req
 def post_delete(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if post.agency.user != request.user:
-        return HttpResponse('You are not allowed to delete other agency posts!')
+        return error_message(request, 'You are not allowed to delete other agency posts!')
     post.delete()
     return redirect('dashboard')

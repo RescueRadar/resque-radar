@@ -13,6 +13,7 @@ urlpatterns = [
     path('contact/', base_views.contact, name='contact'),
     path('accounts/profile/', base_views.profile, name='profile'),
     path('dashboard/', base_views.dashboard, name='dashboard'),
+    path('error_message/', base_views.error_message, name='error_message'),
     path('all_agencies/', base_views.all_agencies, name='all_agencies'),
     path('request_submitted/<str:form_submitted>/', base_views.request_submitted, name='request_submitted'),
     path('user_profile/', base_views.user_profile, name='user_profile'),
