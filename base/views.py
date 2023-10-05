@@ -152,12 +152,12 @@ def post_new(request):
     else:
         form = PostForm()
     return render(request, 'post_edit.html', {'form': form})
-
+    
 @login_required
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if post.agency.user != request.user:
-        return redirect('dashboard')  # Redirect if trying to edit other agency's post
+        return HttpResponse('You are not allowed to edit other agency posts!')  
     if request.method == "POST":
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
@@ -172,6 +172,6 @@ def post_edit(request, pk):
 def post_delete(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if post.agency.user != request.user:
-        return redirect('dashboard')  # Redirect if trying to delete other agency's post
+        return HttpResponse('You are not allowed to delete other agency posts!')
     post.delete()
     return redirect('dashboard')
