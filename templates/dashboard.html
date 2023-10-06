@@ -1,15 +1,18 @@
-{% extends 'base.html' %} {% block main %}
+{% extends 'base.html' %} 
+{% block main %} 
+{% load static %} 
+{% comment %} Vertical Navigation {% endcomment %}
     <div
         class="md:h-screen md:w-52 w-full border-r-2 border-base-200 md:fixed flex flex-col justify-between items-center py-4">
         <ul class="md:space-y-4 flex md:flex-col flex-row items-center justify-center">
             <li>
-                <a href="{% url 'dashboard' %}" class="btn btn-ghost bg-base-200 btn-sm">
+                <a href="{% url 'dashboard' %}" class="btn btn-ghost btn-sm">
                     <i class="fa-solid fa-table-columns"></i>
                     Dashboard
                 </a>
             </li>
             <li>
-                <a href="{% url 'all_agencies' %}" class="btn btn-ghost btn-sm">
+                <a href="{% url 'all_agencies' %}" class="btn bg-base-200 btn-ghost btn-sm">
                     <i class="fa-solid fa-book"></i>
                     All Agencies
                 </a>
@@ -24,47 +27,69 @@
                 <a href="{% url 'victims_portal' %}" class="btn btn-ghost btn-sm"><i class="fa-solid fa-tower-broadcast"></i> Victims Portal </a>
             </li>
         </ul>
- 
     </div>
+
     <div class="md:w-[calc(100%-13rem)] w-full min-h-[80dvh] md:ml-[13rem] flex flex-col">
-
-        <h1 class="my-6 font-bold text-2xl ml-6 flex justify-between items-center">
-            <span>Real Time Updates</span>
-            <a href="{% url 'post_new' %}" class="btn btn-ghost rounded-full mr-4 btn-outline ">
-                Create New Post
-            </a>
-        </h1>
-        </h1>
-
-
-
-        <div class="px-6 space-y-6 mb-12 ">
-            {% for post in posts %}
-            <div class="border-2 border-base-200 hover:border-base-content/50">
-                <div class="bg-base-200">
-                    <a href={% url 'agencyPage' %}>
-                        <span class="text-2xl hover:text-green-500 font-bold">{{ post.agency.user }}</span>
+	{% comment %} SearchBar {% endcomment %}
+        <div class="w-full flex p-6">
+            <input type="text" class="input input-bordered w-full" placeholder="Search a particular Agency..." />
+            <details class="dropdown ml-4">
+                <summary class="text-xl btn btn-ghost">
+                    <i class="fa-solid fa-bars"></i>
+                </summary>
+                <ul class="p-2 shadow menu dropdown-content z-[1] bg-base-200 rounded-box">
+                    <h4 class="font-bold my-2 text-center">Filter By</h4>
+                    <li><a class="whitespace-nowrap">RO Status</a></li>
+                    <li><a>Region</a></li>
+                </ul>
+            </details>
+            <button class="btn btn-ghost text-xl">
+                <div class="indicator">
+                    <span class="indicator-item badge badge-accent badge-sm"></span>
+                    <i class="fa-solid fa-bell"></i>
                 </div>
-    
-                </a>
+            </button>
+        </div>
+
+        <div class="px-6 space-y-6 mb-12">
+            {% for post in posts %}
+                <div
+                    class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg border-2 border-base-200 transition duration-300">
                     <a href={% url 'post_detail' post.pk %} class="inline-block w-full">
-                        <div
-                            class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg hover:bg-base-base-300 hover:border-base-content/50 border-2 border-base-200 hover:cursor-pointer transition duration-300">
-                            <div class="flex items-center mb-4">
-                                <div>
-                                    <h3 class="pr-4 mb-2 text-xl font-bold">{{ post.title }}</h3>
-                                    <p
-                                        class="text-base-content/70 text-sm mr-4"
-                                    >
-                                        {{ post.content }}
-                                    </p>
-                                </div>
+                    <div class="flex items-center mb-4">
+                        
+                        <div class="flex justify-between">
+                            <div>
+                                <h3 class="pr-4 text-xl font-bold">{{ post.title }}</h3>
+                                <p
+                                    class="mb-2"
+                                >- {{ post.agency.user }}</p>
+                                <p
+                                    class="text-base-content/70 text-sm mr-4"
+                                >
+                                    {{ post.content }}
+                                </p>
+                            </div>
+                            <div class="flex flex-col justify-between items-end">
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-spinner mr-2"></i>
+                                    Status
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-location-dot mr-2"></i>
+                                    Location
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-user-group mr-2"></i>
+                                    Manpower
+                                </li>
                             </div>
                         </div>
+                    </div>
                     </a>
-            </div>
-
+                </div>
             {% endfor %}
         </div>
     </div>
 {% endblock %}
+
