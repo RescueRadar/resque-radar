@@ -6,13 +6,13 @@
         class="md:h-screen md:w-52 w-full border-r-2 border-base-200 md:fixed flex flex-col justify-between items-center py-4">
         <ul class="md:space-y-4 flex md:flex-col flex-row items-center justify-center">
             <li>
-                <a href="{% url 'dashboard' %}" class="btn btn-ghost btn-sm">
+                <a href="{% url 'dashboard' %}" class="btn bg-base-200 btn-ghost btn-sm">
                     <i class="fa-solid fa-table-columns"></i>
                     Dashboard
                 </a>
             </li>
             <li>
-                <a href="{% url 'all_agencies' %}" class="btn bg-base-200 btn-ghost btn-sm">
+                <a href="{% url 'all_agencies' %}" class="btn btn-ghost btn-sm">
                     <i class="fa-solid fa-book"></i>
                     All Agencies
                 </a>
@@ -32,7 +32,10 @@
     <div class="md:w-[calc(100%-13rem)] w-full min-h-[80dvh] md:ml-[13rem] flex flex-col">
 	{% comment %} SearchBar {% endcomment %}
         <div class="w-full flex p-6">
-            <input type="text" class="input input-bordered w-full" placeholder="Search a particular Agency..." />
+            <input type="text" class="input input-bordered w-full mr-4" placeholder="Search a particular Agency..." />
+            <a href="{% url 'post_new' %}" class="btn btn-outline btn-info rounded-full mr-4 ml-4">
+                    <i class="fa-solid fa-circle-plus fa-lg mr-2">  Post</i>
+            </a>
             <details class="dropdown ml-4">
                 <summary class="text-xl btn btn-ghost">
                     <i class="fa-solid fa-bars"></i>
