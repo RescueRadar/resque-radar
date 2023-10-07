@@ -61,9 +61,11 @@
                         </p>
                     </div>
                     <div>
-                        <button class="btn btn-sm btn-accent">
-                            Enter Room
-                        </button>
+                        <a href="{% url 'chatroom' %}"">
+                            <button class="btn btn-sm btn-accent">
+                                Enter Room
+                            </button>
+                        </a>
                         <button
                             class="btn btn-error btn-sm ml-2"
                             onclick="confirm('Are you sure you want to end this operation?') ? alert('Operation ended successfully!') : null"
@@ -98,9 +100,11 @@
                         </p>
                     </div>
                     <div>
-                        <button class="btn btn-sm btn-accent">
-                            Enter Room
-                        </button>
+                        <a href="{% url 'chatroom' %}"">
+                            <button class="btn btn-sm btn-accent">
+                                Enter Room
+                            </button>
+                        </a>
                         <button
                             class="btn btn-error btn-sm ml-2"
                             onclick="confirm('Are you sure you want to end this operation?') ? alert('Operation ended successfully!') : null"
