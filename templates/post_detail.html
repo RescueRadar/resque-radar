@@ -28,18 +28,16 @@
     <div class="md:w-[calc(100%-13rem)] w-full min-h-[80dvh] md:ml-[13rem] flex flex-col p-8">
         <div class="flex justify-between items-center mb-6">
             <h1
-            class="text-2xl font-bold"
-             >{{ post.title }}</h1>
+                class="text-2xl font-bold"
+            >{{ post.title }}</h1>
 
-            <button class="btn btn-outline btn-neutral mr-2 ml-4">
-                <a href="{% url 'agencyPage' %}" class="text-xl font-bold ">
-                    {{ post.agency.user }}
-                </a>
-            </button>
+            <a href="{% url 'agencyPage' %}" class="btn btn-outline btn-accent">
+                {{ post.agency.user }}
+            </a>
 
-            
-        
-            <a href="{% url 'dashboard' %}" class="btn bg-base-300 btn-outline">Back to feed</a>
+
+
+            <a href="{% url 'dashboard' %}" class="btn bg-base-300">Back to feed</a>
         </div>
         <p
             class="text-base mb-8"
