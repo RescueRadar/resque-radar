@@ -6,3 +6,6 @@ django-allauth-ui
 django-widget-tweaks
 psycopg2-binary
 whitenoise
+daphne
+channels
+channels[daphne]
