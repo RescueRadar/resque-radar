@@ -1,6 +1,6 @@
-{% extends 'base.html' %} 
-{% block main %} 
-{% load static %} 
+{% extends 'base.html' %}
+{% block main %}
+    {% load static %}
 {% comment %} Vertical Navigation {% endcomment %}
     <div
         class="md:h-screen md:w-52 w-full border-r-2 border-base-200 md:fixed flex flex-col justify-between items-center py-4">
@@ -33,8 +33,9 @@
 	{% comment %} SearchBar {% endcomment %}
         <div class="w-full flex p-6">
             <input type="text" class="input input-bordered w-full mr-4" placeholder="Search a particular Agency..." />
-            <a href="{% url 'post_new' %}" class="btn btn-outline btn-info rounded-full mr-4 ml-4">
-                    <i class="fa-solid fa-circle-plus fa-lg mr-2">  Post</i>
+            <a href="{% url 'post_new' %}" class="btn btn-outline btn-info rounded-full">
+                <i class="fa-solid fa-circle-plus fa-lg mr-2"></i>
+                Post
             </a>
             <details class="dropdown ml-4">
                 <summary class="text-xl btn btn-ghost">
@@ -56,39 +57,40 @@
 
         <div class="px-6 space-y-6 mb-12">
             {% for post in posts %}
-                <div
-                    class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg border-2 border-base-200 transition duration-300">
-                    <a href={% url 'post_detail' post.pk %} class="inline-block w-full">
-                    <div class="flex items-center mb-4">
-                        
-                        <div class="flex justify-between">
-                            <div>
-                                <h3 class="pr-4 text-xl font-bold">{{ post.title }}</h3>
-                                <p
-                                    class="mb-2"
-                                >- {{ post.agency.user }}</p>
-                                <p
-                                    class="text-base-content/70 text-sm mr-4"
-                                >
-                                    {{ post.content }}
-                                </p>
-                            </div>
-                            <div class="flex flex-col justify-between items-end">
-                                <li class="flex items-center">
-                                    <i class="fa-solid fa-spinner mr-2"></i>
-                                    Status
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fa-solid fa-location-dot mr-2"></i>
-                                    Location
-                                </li>
-                                <li class="flex items-center">
-                                    <i class="fa-solid fa-user-group mr-2"></i>
-                                    Manpower
-                                </li>
+                <div>
+                    <a href={% url 'post_detail' post.pk %}>
+                        <div
+                            class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg border-2 hover:border-gray-500 border-base-200 transition duration-300">
+                            <div class="inline-block w-full">
+                                <div class="flex justify-between">
+                                    <div>
+                                        <h3 class="pr-4 text-xl font-bold">{{ post.title }}</h3>
+                                        <p
+                                            class="mb-2"
+                                        >- {{ post.agency.user }}</p>
+                                        <p
+                                            class="text-base-content/70 text-sm mr-4"
+                                        >
+                                            {{ post.content }}
+                                        </p>
+                                    </div>
+                                    <div class="flex flex-col justify-between items-end">
+                                        <li class="flex items-center">
+                                            <i class="fa-solid fa-spinner mr-2"></i>
+                                            Status
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fa-solid fa-location-dot mr-2"></i>
+                                            Location
+                                        </li>
+                                        <li class="flex items-center">
+                                            <i class="fa-solid fa-user-group mr-2"></i>
+                                            Manpower
+                                        </li>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
                     </a>
                 </div>
             {% endfor %}
