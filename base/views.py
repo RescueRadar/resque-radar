@@ -57,6 +57,9 @@ def user_report(request):
 def error_message(request, error_message):
     return render(request, 'error_message.html', {'error_message': error_message})
 
+def profileEdit(request):
+    return render(request, 'profileEdit.html')
+
 @login_required
 @agency_req
 def victims_portal(request):

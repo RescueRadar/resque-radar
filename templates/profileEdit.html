@@ -1,0 +1,159 @@
+{% extends 'base.html' %} {% block main %}
+
+<body class="bg-cream text-charcoal min-h-screen font-sans leading-normal overflow-x-hidden lg:overflow-auto">
+    <main class="flex-1 md:p-0 lg:pt-8 lg:px-8 md:ml-24 flex flex-col">
+    <section class="bg-cream-lighter p-4 shadow">
+    <div class="md:flex">
+      <button class="btn btn-error md:w-1/3 uppercase tracking-wide mb-6">Get Live Location</button>
+    </div>
+    <form>
+      <div class="md:flex mb-8">
+        <div class="md:w-1/3">
+          <legend class="uppercase tracking-wide text-lg">Location</legend>
+          <p class="text-xs font-light text-red">This entire section is required.</p>
+        </div>
+      <div class="md:flex-1 mt-2 mb:mt-0 md:px-3">
+        <div class="mb-4">
+          <label class="block uppercase tracking-wide text-lg font-bold">Name</label>
+          <input class="w-full shadow-inner p-4 border-0" type="text" name="name" placeholder="DMDA">
+        </div>
+        <div class="md:flex mb-4">
+          <div class="md:flex-1 md:pr-3">
+            <label class="block uppercase tracking-wide text-charcoal-darker text-lg font-bold">Street Address</label>
+            <input class="w-full shadow-inner p-4 border-0" type="text" name="address_street" placeholder="Arindam Marg 3rd Lane">
+          </div>
+          <div class="md:flex-1 md:pl-3">
+            <label class="block uppercase tracking-wide text-charcoal-darker text-lg font-bold">Building/Suite No.</label>
+            <input class="w-full shadow-inner p-4 border-0" type="text" name="address_number" placeholder="Plot-5/41">
+          </div>
+        </div>
+        <div class="md:flex mb-4">
+          <div class="md:flex-1 md:pr-3">
+              <label class="block uppercase tracking-wide text-charcoal-darker text-lg font-bold">Latitude</label>
+              <input class="w-full shadow-inner p-4 border-0" type="text" name="lat" placeholder="30.0455542">
+              <span class="text-xs mb-4 font-thin">will be filled from live location</span>
+            </div>
+            <div class="md:flex-1 md:pl-3">
+              <label class="block uppercase tracking-wide text-charcoal-darker text-lg font-bold">Longitude</label>
+              <input class="w-full shadow-inner p-4 border-0" type="text" name="lon" placeholder="-99.1405168">
+              <span class="text-xs mb-4 font-thin">will be filled from live location</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="md:flex mb-8">
+        <div class="md:w-1/3">
+          <legend class="uppercase tracking-wide text-lg">Contact</legend>
+        </div>
+        <div class="md:flex-1 mt-2 mb:mt-0 md:px-3">
+          <div class="mb-4">
+            <label class="block uppercase tracking-wide text-lg font-bold">Phone</label>
+            <input class="w-full shadow-inner p-4 border-0" type="tel" name="phone" placeholder="(+91)">
+          </div>
+          <div class="mb-4">
+            <label class="block uppercase tracking-wide text-charcoal-darker text-lg font-bold">URL</label>
+            <input class="w-full shadow-inner p-4 border-0" type="url" name="url" placeholder="dmda.gov.co">
+          </div>
+          <div class="mb-4">
+            <label class="block uppercase tracking-wide text-charcoal-darker text-lg font-bold">Email</label>
+            <input class="w-full shadow-inner p-4 border-0" type="email" name="email" placeholder="dmda.gov@gmail.com">
+          </div>
+        </div>
+      </div>
+      <div class="md:flex mb-8">
+        <div class="md:w-1/3">
+          <legend class="uppercase tracking-wide text-lg">Statistics</legend>
+        </div>
+        <div class="md:flex-1 mt-2 mb:mt-0 md:px-3">
+          <div class="mb-4">
+            <legend class="uppercase tracking-wide text-lg mb-2 font-bold">Rescue Operation Status</legend>
+            <select class="select select-bordered w-full max-w-xs">
+                <option disabled selected class="block uppercase tracking-wide text-lg font-bold">Select Status</option>
+                <option>Ongoing</option>
+                <option>Not Started/Over</option>
+                <option>Needs Assistance</option>
+              </select>              
+          </div>
+          <div class="mb-4">
+            <label class="block uppercase tracking-wide text-charcoal-darker text-lg font-bold">People Rescued</label>
+            <input class="w-full shadow-inner p-4 border-0" type="number" name="PR" placeholder="Enter Number of People">
+          </div>
+          <div class="mb-4">
+            <label class="block uppercase tracking-wide text-charcoal-darker text-lg font-bold">Rescue Operations</label>
+            <input class="w-full shadow-inner p-4 border-0" type="number" name="RO" placeholder="Total RO Undertaken">
+          </div>
+          <div class="mb-4">
+            <label class="block uppercase tracking-wide text-charcoal-darker text-lg font-bold">Medical Assiatance Delivered</label>
+            <input class="w-full shadow-inner p-4 border-0" type="number" name="MAD" placeholder="Assiatance Supplied">
+          </div>
+        </div>
+      </div>
+      <div class="md:flex">
+        <div class="md:w-1/3">
+          <legend class="uppercase tracking-wide text-lg">Social</legend>
+        </div>
+        <div class="md:flex-1 mt-2 mb:mt-0 md:px-3">
+          <div class="md:flex mb-4">
+            <div class="md:flex-1 md:pr-3">
+              <label class="block uppercase tracking-wide text-charcoal-darker text-xs font-bold flex justify-center items-center">Facebook</label>
+              <div class="w-full flex">
+                <span class="text-xs py-4 px-2 bg-grey-light text-grey-dark"><i class="fa-brands fa-facebook fa-2xl"></i></span>
+                <input class="flex-1 shadow-inner p-4 border-0" type="url" name="facebook" placeholder="">
+              </div>
+            </div>
+            <div class="md:flex-1 md:pl-3 mt-2 md:mt-0">
+              <label class="block uppercase tracking-wide text-charcoal-darker text-xs font-bold flex justify-center items-center">Twitter</label>
+              <div class="w-full flex">
+                <span class="text-xs py-4 px-2 bg-grey-light text-grey-dark"><i class="fa-brands fa-twitter fa-2xl"></i></span>
+                <input class="flex-1 shadow-inner p-4 border-0" type="url" name="twitter" placeholder="">
+              </div>
+            </div>
+          </div>
+          <div class="md:flex mb-4">
+            <div class="md:flex-1 md:pr-3">
+              <label class="block uppercase tracking-wide text-charcoal-darker text-xs font-bold flex justify-center items-center">Instagram</label>
+              <div class="w-full flex">
+                <span class="text-xs py-4 px-2 bg-grey-light text-grey-dark"><i class="fa-brands fa-instagram fa-2xl"></i></span>
+                <input class="flex-1 shadow-inner p-4 border-0" type="url" name="instagram" placeholder="">
+              </div>
+            </div>
+            <div class="md:flex-1 md:pl-3 mt-2 md:mt-0">
+              <label class="block uppercase tracking-wide text-charcoal-darker text-xs font-bold flex justify-center items-center">Discord</label>
+                <div class="w-full flex">
+                  <span class="text-xs py-4 px-2 bg-grey-light text-grey-dark"><i class="fa-brands fa-discord fa-2xl"></i></span>
+                  <input class="flex-1 shadow-inner p-4 border-0" type="url" name="discord" placeholder="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="md:flex mb-6">
+          <div class="md:w-1/3">
+            <legend class="uppercase tracking-wide text-lg">Description</legend>
+          </div>
+          <div class="md:flex-1 mt-2 mb:mt-0 md:px-3">
+            <textarea class="w-full shadow-inner p-4 border-0" placeholder="Tell about your agency" rows="6"></textarea>
+          </div>
+        </div>
+        <div class="md:flex mb-6">
+          <div class="md:w-1/3">
+            <legend class="uppercase tracking-wide text-lg">Profile Picture</legend>
+          </div>
+          <div class="md:flex-1 px-3 text-center">
+            <div class="button text-cream mx-auto cusor-pointer relative">
+                <input type="file" class="file-input file-input-bordered file-input-warning w-full max-w-xs" name="profile img"/>
+            </div>
+          </div>
+        </div>
+        <div class="md:flex mb-6 border border-t-1 border-b-0 border-x-0 border-cream-dark">
+          <div class="md:flex-1 px-3 text-center md:text-right">
+            <input type="hidden" name="sponsor" value="0">
+            <button class="btn btn-outline btn-success rounded-full mb-6 mt-4">Update Profile</button>
+        </div>
+        </div>
+      </form>
+    </section>
+    </main>
+  </body>
+
+{% endblock main %}
