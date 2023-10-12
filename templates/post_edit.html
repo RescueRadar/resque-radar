@@ -1,8 +1,14 @@
 {% extends 'base.html' %} {% block main %}
-    <h1>Make Post</h1>
-    <form method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save</button>
-    </form>
+    <div class="min-h-[90dvh] flex items-center justify-center">
+        <div class="bg-base-200 p-10 rounded-xl">
+            <h1
+                class="text-2xl font-bold my-4 ml-4"
+            >Edit Post</h1>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-info btn-outline w-full mt-6">Save</button>
+            </form>
+        </div>
+    </div>
 {% endblock %}

@@ -61,46 +61,46 @@
                         </p>
                     </div>
                     <div>
-                        <a href="{% url 'chatroom' %}"">
-                                                       <button class="btn btn-sm btn-accent">
-                                                                                                                       Enter Room
-                                                                                                                       </button>
-                                                                                                                       </a>
-                                                                                                                       <button
-                                                                                                                       class="btn btn-error btn-sm ml-2"
-                                                            onclick="confirm('Are you sure you want to end this operation?') ? alert('Operation ended successfully!') : null"
-                                                                                                                                            >
-                                                                                                                                            <i class="fa-solid fa-trash"></i>
-                                                                                                                                                                                                   End Operation
-                                                                                                                                                                                                   </button>
-                                                                                                                                                                                                   </div>
-                                                                                                                                                                                                   </div>
-                                                                                                                                                                                                   </div>
-                                                                                                                                                                                                   <div
-                                                                                                                                                                                                   class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg border-base-200">
-                                                                                                    <div class="flex items-center mb-4">
-                                                                                                                                                                  <div class="indicator mr-4">
-                                                                                                                                                                                                                        <span class="indicator-item badge badge-sm badge-error"></span>
-                                                                                                                                                                                                                                                                                                          <h3 class="pr-4 text-lg font-bold">
-                                                                                                                                                                                                                                                                                                                                                                       NDRF Rescue Team and CDRI Rescue Team
-                                                                                                                                                                                                                                                                                                                                                                       </h3>
-                                                                                                                                                                                                                                                                                                                                                                       </div>
-                                                                                                                                                                                                                                                                                                                                                                       <p>- Operation requires immediate assistance</p>
-                                                                                                                                                                                                                                                                                                                                                                       </div>
-                                                                                                                                                                                                                                                                                                                                                                       <div class="flex flex-col space-y-8 md:flex-row justify-between items-center">
-                                                                                                                                                                                                                                                                                                                                                                                           <div class="flex flex-col justify-center space-y-2 text-base-content/70 text-sm">
-                                                                                                                                                                                                                                                                                                                                                                                                                                            <p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                            <i class="fa-solid fa-map-pin"></i> Location: <span class="font-bold">Delhi, India</span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          </p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <i class="fa-solid fa-users"></i> No. of People Affected: <span class="font-bold"> +200</span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="fa-solid fa-clock"></i> Total Time Spent: <span class="font-bold">7h 53m</span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </p>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <a href="{% url 'chatroom' %}"">
+                        <a href="{% url 'chatroom' %}">
+                            <button class="btn btn-sm btn-accent">
+                                Enter Room
+                            </button>
+                        </a>
+                        <button
+                            class="btn btn-error btn-sm ml-2"
+                            onclick="confirm('Are you sure you want to end this operation?') ? alert('Operation ended successfully!') : null"
+                        >
+                            <i class="fa-solid fa-trash"></i>
+                            End Operation
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="bg-base-200 rounded-xl shadow p-6 hover:shadow-lg border-base-200">
+                <div class="flex items-center mb-4">
+                    <div class="indicator mr-4">
+                        <span class="indicator-item badge badge-sm badge-error"></span>
+                        <h3 class="pr-4 text-lg font-bold">
+                            NDRF Rescue Team and CDRI Rescue Team
+                        </h3>
+                    </div>
+                    <p>- Operation requires immediate assistance</p>
+                </div>
+                <div class="flex flex-col space-y-8 md:flex-row justify-between items-center">
+                    <div class="flex flex-col justify-center space-y-2 text-base-content/70 text-sm">
+                        <p>
+                            <i class="fa-solid fa-map-pin"></i> Location: <span class="font-bold">Delhi, India</span>
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-users"></i> No. of People Affected: <span class="font-bold"> +200</span>
+                        </p>
+                        <p>
+                            <i class="fa-solid fa-clock"></i> Total Time Spent: <span class="font-bold">7h 53m</span>
+                        </p>
+                    </div>
+                    <div>
+                        <a href="{% url 'chatroom' %}">
                             <button class="btn btn-sm btn-accent">
                                 Enter Room
                             </button>

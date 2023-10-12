@@ -30,14 +30,12 @@
             <h1
                 class="text-2xl font-bold"
             >{{ post.title }}</h1>
-
-            <a href="{% url 'agencyPage' %}" class="btn btn-outline btn-accent">
-                {{ post.agency.user }}
-            </a>
-
-
-
-            <a href="{% url 'dashboard' %}" class="btn bg-base-300">Back to feed</a>
+            <div>
+                <a href="{% url 'agencyPage' %}" class="btn btn-outline btn-accent mr-4">
+                    {{ post.agency.user }}
+                </a>
+                <a href="{% url 'dashboard' %}" class="btn bg-base-300">Back to feed</a>
+            </div>
         </div>
         <p
             class="text-base mb-8"
