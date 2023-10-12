@@ -9,6 +9,8 @@ from django.core.mail import send_mail
 import os
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
+import folium
+import pandas as pd
 
 # Create your views here.
 def home(request):
@@ -185,3 +187,30 @@ def post_delete(request, pk):
         return error_message(request, 'You are not allowed to delete other agency posts!')
     post.delete()
     return redirect('dashboard')
+
+@login_required
+def display_map(request):
+    # took sample data for rescue agencies location at puri (Odisha)
+    data = [
+        {"name": "NDRF", "latitude": 19.798306, "longitude": 85.826355},
+        {"name": "DMDA", "latitude": 19.804039, "longitude":85.817136},
+        {"name": "CDRI", "latitude": 19.794752, "longitude":85.812241},
+        {"name": "ANC", "latitude": 19.809553, "longitude":85.795681},
+        {"name": "RDA Volunteers", "latitude": 19.806808, "longitude":85.856833},
+        {"name": "MKLO", "latitude": 19.803623, "longitude": 85.779922},
+    ]
+
+    m = folium.Map(location=[data[0]["latitude"], data[0]["longitude"]], zoom_start=5)
+
+    for item in data:
+        folium.Marker(
+            location=[item["latitude"], item["longitude"]],
+            popup=item["name"]
+        ).add_to(m)
+
+    bounds = [[item["latitude"], item["longitude"]] for item in data]
+    m.fit_bounds(bounds)
+
+    map_html = m._repr_html_()
+
+    return render(request, 'display_map.html', {"map_html": map_html})

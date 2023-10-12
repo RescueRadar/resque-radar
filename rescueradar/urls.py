@@ -27,6 +27,7 @@ urlpatterns = [
     path('post/new/', base_views.post_new, name='post_new'),
     path('post/<int:pk>/edit/', base_views.post_edit, name='post_edit'),
     path('post/<int:pk>/delete/', base_views.post_delete, name='post_delete'),
+    path('display-map/', base_views.display_map, name='display_map'),
 
 
     # path('', include(router.urls)),

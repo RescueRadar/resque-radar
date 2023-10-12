@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block main %}
+{% load static %}
+{% comment %} Vertical Navigation {% endcomment %}
+
+<div
+    class="md:h-screen md:w-52 w-full border-r-2 border-base-200 md:fixed flex flex-col justify-between items-center py-4">
+    <ul class="md:space-y-4 flex md:flex-col flex-row items-center justify-center">
+        <li>
+            <a href="{% url 'dashboard' %}" class="btn btn-ghost btn-sm">
+                <i class="fa-solid fa-table-columns"></i>
+                Dashboard
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'all_agencies' %}" class="btn btn-ghost btn-sm">
+                <i class="fa-solid fa-book"></i>
+                All Agencies
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'rooms' %}" class="btn btn-ghost btn-sm">
+                <i class="fa-solid fa-door-open"></i>
+                Rooms
+            </a>
+        </li>
+        <li>
+            <a href="{% url 'victims_portal' %}" class="btn btn-ghost btn-sm"><i class="fa-solid fa-tower-broadcast"></i> Victims Portal </a>
+        </li>
+        <li>
+            <a href="{% url 'display_map' %}" class="btn btn-ghost btn-sm"><i class="fa-solid fa-map-location-dot"></i> Maps Portal </a>
+        </li>
+    </ul>
+</div>
+
+<div class="md:w-[calc(100%-13rem)] w-full min-h-[80dvh] md:ml-[13rem] flex flex-col">
+    <div class="px-6 space-y-6 mb-12">
+        <div id="map" class="h-400px">{{ map_html|safe }}</div>
+    </div>
+</div>
+
+
+{% endblock main %}

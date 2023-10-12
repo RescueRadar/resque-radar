@@ -9,3 +9,4 @@ whitenoise
 daphne
 channels
 channels[daphne]
+folium
