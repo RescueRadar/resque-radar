@@ -10,7 +10,7 @@ import os
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 import folium
-import pandas as pd
+from django.db.models import Q
 
 # Create your views here.
 def home(request):
@@ -84,7 +84,11 @@ def agencyPage(request):
 @login_required
 @agency_req
 def dashboard(request):
-    posts = Post.objects.all()
+    q=request.GET.get('q') if request.GET.get('q') != None else ''
+    posts = Post.objects.filter(
+                Q(title__icontains=q) | 
+                Q(content__icontains=q)
+            )
     return render(request, 'dashboard.html', {'posts': posts})
 
 @login_required

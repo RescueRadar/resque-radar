@@ -35,7 +35,12 @@
     <div class="md:w-[calc(100%-13rem)] w-full min-h-[80dvh] md:ml-[13rem] flex flex-col">
 	{% comment %} SearchBar {% endcomment %}
         <div class="w-full flex p-6">
-            <input type="text" class="input input-bordered w-full mr-4" placeholder="Search a particular Agency..." />
+            <form action="{% url 'dashboard' %}" method="GET" class="flex w-full">
+                <input type="text" class="input input-bordered w-full mr-4" name="q" placeholder="Search your feed..." />
+                <button type="submit" class="btn btn-outline btn-ghost rounded-box mr-4">
+                    <i class="fa-solid fa-search fa-lg mr-2"></i>
+                </button>
+            </form>
             <a href="{% url 'post_new' %}" class="btn btn-outline btn-info rounded-full">
                 <i class="fa-solid fa-circle-plus fa-lg mr-2"></i>
                 Post
