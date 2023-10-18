@@ -13,7 +13,6 @@ from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 import folium
 from django.db.models import Q
-from ipinfo_django.ip_selector.remote_client import ClientIPSelector
 
 
 # Create your views here.
@@ -223,9 +222,16 @@ def display_map(request):
 
     return render(request, 'display_map.html', {"map_html": map_html})
 
+def get_client_ip(request):
+    x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
+    if x_forwarded_for:
+        ip = x_forwarded_for.split(',')[-1].strip()
+    else:
+        ip = request.META.get('REMOTE_ADDR')
+    return ip
+
 def get_ip_info(request):
-    ip_selector = ClientIPSelector()
-    user_ip = ip_selector.get_client_ip(request)
+    user_ip = get_client_ip(request)
 
     api_token = os.environ.get('IP_INFO_API')
     api_url = f'https://ipinfo.io/{user_ip}/json?token={api_token}'
