@@ -28,11 +28,13 @@
                 </div>
               </div>
               <div class="md:flex mb-4">
+
                 <div class="md:flex-1 md:pr-3">
                   <label class="block uppercase tracking-wide text-charcoal-darker text-lg font-bold">Latitude</label>
-                  <input class="w-full shadow-inner p-4 border-0" type="text" name="lat" placeholder="30.0455542">
+                  <input id="latitudeInput" class="w-full shadow-inner p-4 border-0" type="text" name="lat" placeholder="latitude">
                   <span class="text-xs mb-4 font-thin">will be filled from live location</span>
                 </div>
+
                 <div class="md:flex-1 md:pl-3">
                   <label class="block uppercase tracking-wide text-charcoal-darker text-lg font-bold">Longitude</label>
                   <input class="w-full shadow-inner p-4 border-0" type="text" name="lon" placeholder="-99.1405168">
@@ -153,7 +155,9 @@
           </div>
         </form>
       </section>
+  
     </main>
+ 
   </body>
 
 {% endblock main %}

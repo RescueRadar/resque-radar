@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
+import requests
+from django.http import JsonResponse
 from agency.models import agency, non_approved_agency,Post
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -11,6 +13,8 @@ from django.template.loader import render_to_string
 from django.core.mail import EmailMessage
 import folium
 from django.db.models import Q
+from ipinfo_django.ip_selector.remote_client import ClientIPSelector
+
 
 # Create your views here.
 def home(request):
@@ -87,7 +91,7 @@ def dashboard(request):
     q=request.GET.get('q') if request.GET.get('q') != None else ''
     posts = Post.objects.filter(
                 Q(title__icontains=q) | 
-                Q(content__icontains=q)
+                Q(content__icontains=q) 
             )
     return render(request, 'dashboard.html', {'posts': posts})
 
@@ -218,3 +222,31 @@ def display_map(request):
     map_html = m._repr_html_()
 
     return render(request, 'display_map.html', {"map_html": map_html})
+
+def get_ip_info(request):
+    ip_selector = ClientIPSelector()
+    user_ip = ip_selector.get_client_ip(request)
+
+    api_token = os.environ.get('IP_INFO_API')
+    api_url = f'https://ipinfo.io/{user_ip}/json?token={api_token}'
+    
+    response = requests.get(api_url)
+    if response.status_code == 200:
+        ip_info = response.json()
+        loc_info = ip_info.get('loc', '').split(',')
+        latitude = loc_info[0] if len(loc_info) > 0 else ''
+        longitude = loc_info[1] if len(loc_info) > 1 else ''
+        city = ip_info.get('city', '')
+        region = ip_info.get('region', '').strip('(), ') 
+        postal = ip_info.get('postal')
+        return {
+            'latitude': latitude,
+            'longitude': longitude,
+            'city': city,
+            'region': region,
+            'postal': postal
+        }
+
+def display_ip_info(request):
+    ip_info = get_ip_info(request)
+    return render(request, 'sam.html', {'ip_info': ip_info})

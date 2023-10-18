@@ -10,3 +10,4 @@ daphne
 channels
 channels[daphne]
 folium
+ipinfo_django

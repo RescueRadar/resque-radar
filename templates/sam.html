@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block main %}
+
+    <h1>IP Information</h1>
+    <p>Latitude: <span id="latitude">{{ ip_info.latitude }}</span></p>
+    <p>Longitude: <span id="longitude">{{ ip_info.longitude }}</span></p>
+    <p>City: <span id="city">{{ ip_info.city }}</span></p>
+    <p>Region: <span id="city">{{ ip_info.region }}</span></p>
+    <p>Postal: <span id="city">{{ ip_info.postal }}</span></p>
+
+{% endblock %}
+
+
+
